@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Geomanist';
+    src: url('Geomanist-Medium.woff2') format('woff2'),
+        url('Geomanist-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+.Medium {
+    font-family: 'Geomanist';
+    font-weight: 500;
+    font-style: normal;
+}
