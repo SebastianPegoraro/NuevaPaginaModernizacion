@@ -100,14 +100,18 @@
                 </a>
                 <div class="portfolio-caption">
                   <h4>'.$row['nombre'].'</h4>
-                  <p class="text-muted">
-                    '.$id_deporte = $row['id_deporte'];
-                      $stmt2 = $dbh->prepare("SELECT sexo.nombre FROM sexo INNER JOIN combinacion ON sexo.id_sexo = combinacion.id_sexo WHERE combinacion.id_deporte=$id_deporte GROUP BY sexo.nombre");
+                  <p class="text-muted">';
+              //estas dentro de un echo. no podes poner instrucciones (o mas codigo) dentro del echo. por eso, el echo "termina" aca.
+                      $id_deporte = $row['id_deporte'];
+              //ojo con el inner join y con las variables dentro de la consulta.
+                      $stmt2 = $dbh->prepare("SELECT sexo.nombre FROM combinacion INNER JOIN sexo ON sexo.id_sexo = combinacion.id_sexo WHERE combinacion.id_deporte=".$id_deporte." GROUP BY sexo.nombre");
                       $stmt2->execute();
                       $table2 = $stmt2->fetchAll();
                       foreach($table2 as $row2)	{
-                        echo $row2['nombre'];
-                      }'</p>
+                        echo $row2['nombre'].'<br>'; //para que imprima un "enter" luego de cada sexo pongo el <br>
+                      }
+              //aca "sigue" el echo
+              echo '</p>
                 </div>
               </div>';
             }
