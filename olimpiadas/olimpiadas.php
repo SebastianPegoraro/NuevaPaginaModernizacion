@@ -84,7 +84,6 @@
         <div class="row">
           <?php
             include 'connect.php';
-            header("Content-Type: text/html;charset=utf-8");
 
             $stmt = $dbh->prepare("SELECT * FROM deporte");
             $stmt->execute();
@@ -101,13 +100,22 @@
                 </a>
                 <div class="portfolio-caption">
                   <h4>'.$row['nombre'].'</h4>
-                  <p class="text-muted">Masculino-Femenino</p>
+                  <p class="text-muted">
+                    '.$id_deporte = $row['id_deporte'];
+                      $stmt2 = $dbh->prepare("SELECT sexo.nombre FROM sexo INNER JOIN combinacion ON sexo.id_sexo = combinacion.id_sexo WHERE combinacion.id_deporte=$id_deporte GROUP BY sexo.nombre");
+                      $stmt2->execute();
+                      $table2 = $stmt2->fetchAll();
+                      foreach($table2 as $row2)	{
+                        echo $row2['nombre'];
+                      }'</p>
                 </div>
               </div>';
             }
-
-
           ?>
+
+
+
+
           <!-- Maraton -->
           <div class="col-md-3 col-sm-6 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal">
