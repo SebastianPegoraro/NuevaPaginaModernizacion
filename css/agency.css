@@ -54,23 +54,23 @@ section {
   padding: 20px 40px; }
 
 .btn-primary {
-  background-color: #98C350;
-  border-color: #98C350;
+  background-color: #23A4F3;
+  border-color: #23A4F3;
 text-shadow: 1px 1px #000000; }
   .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-    background-color: #B9EE5F !important;
-    border-color: #B9EE5F !important;
+    background-color: #1D24BA !important;
+    border-color: #1D24BA !important;
     color: white; }
   .btn-primary:active, .btn-primary:focus {
     box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important; }
 
     .btn-primary#btn {
-      background-color: #B9EE5F;
-      border-color: #B9EE5F;
+      background-color: #23A4F3;
+      border-color: #23A4F3;
     text-shadow: 1px 1px #000000; }
       .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-        background-color: #98C350 !important;
-        border-color: #98C350 !important;
+        background-color: #1D24BA !important;
+        border-color: #1D24BA !important;
         color: white; }
       .btn-primary:active, .btn-primary:focus {
         box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important; }
@@ -145,7 +145,7 @@ body {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/test-pepo.JPG");
+  background-image: url("../img/portada.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -539,8 +539,21 @@ section#acto{
   background-color: rgba(88, 121, 225, 0.15);
 }
 
-div .contactForm{
-  opacity: 0.7;
+/*Olimpiadas*/
+.img-chaco {
+    padding-left: 30px;
+    max-width: 30%;
+    height: auto;
 }
 
-/*Olimpiadas*/
+.somos {
+  text-align: center;
+  color: white;
+  background-image: url("../img/somos.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }

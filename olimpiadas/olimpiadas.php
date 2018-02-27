@@ -101,10 +101,8 @@
                 <div class="portfolio-caption">
                   <h4>'.$row['nombre'].'</h4>
                   <p class="text-muted">';
-              //estas dentro de un echo. no podes poner instrucciones (o mas codigo) dentro del echo. por eso, el echo "termina" aca.
-                      $id_deporte = $row['id_deporte'];
               //ojo con el inner join y con las variables dentro de la consulta.
-                      $stmt2 = $dbh->prepare("SELECT sexo.nombre FROM combinacion INNER JOIN sexo ON sexo.id_sexo = combinacion.id_sexo WHERE combinacion.id_deporte=".$id_deporte." GROUP BY sexo.nombre");
+                      $stmt2 = $dbh->prepare("SELECT sexo.nombre FROM combinacion INNER JOIN sexo ON sexo.id_sexo = combinacion.id_sexo WHERE combinacion.id_deporte=".$row['id_deporte']." GROUP BY sexo.nombre");
                       $stmt2->execute();
                       $table2 = $stmt2->fetchAll();
                       foreach($table2 as $row2)	{
@@ -119,282 +117,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Premio -->
-    <section id="premio">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Premio</h2>
-            <h3 class="section-subheading text-muted">Estos son los ganadores desde el inicio del Premio al Empleado Público!</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="timeline">
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/1.png" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h2 class="fuente">2010</h2>
-                    <h4 class="subheading">Bruce Wayne</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/2.png" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h2 class="fuente">2011</h2>
-                    <h4 class="subheading">Clark Kent</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/3.png" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h2 class="fuente">2012</h2>
-                    <h4 class="subheading">Red Beard</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/4.png" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h2 class="fuente">2013</h2>
-                    <h4 class="subheading">Nicola Tesla</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/5.png" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h2 class="fuente">2014</h2>
-                    <h4 class="subheading">Barry Allen</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/6.png" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h2 class="fuente">2015</h2>
-                    <h4 class="subheading">Esteban Quito</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/7.png" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h2 class="fuente">2016</h2>
-                    <h4 class="subheading">Cosme Fulanito</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-image">
-                  <h4>Podrias
-                    <br>Ser El
-                    <br>Siguiente!</h4>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Acto -->
-    <section id="acto">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Acto</h2>
-            <h3 class="section-subheading text-muted">Esto premiamos en el Acto al Empleado Público</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/acto/25.jpg" alt="">
-              <h4>25 Años de Servicios</h4>
-              <p class="text-muted">Agentes publicos con 25 años de servicios.</p>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/acto/jubi.jpg" alt="">
-              <h4>Jubilados</h4>
-              <p class="text-muted">Agentes publicos que estén a punto de jubilarse.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">Si este año entras en una de las categorias, no te podes perder el Acto en el que te homenajeamos.-</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Logos -->
-    <section class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/1.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/2.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/3.png" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quienes Somos -->
-    <section class="bg-light" id="nosotros">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-sm-12">
-            <h1>QUIENES SOMOS?</h1>
-            <p>Somos la Dirección General de Modernización del Estado dependiente de la Secretaría General de Gobierno y Coordinación la cual tiene como misión
-              <strong>modernizar y fortalecer</strong> a las Jurisdicciones  de la Administración Pública del Poder Ejecutivo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Contactanos!</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <form id="contactForm" name="sentMessage" novalidate>
-              <div class="row">
-                <div class="col-md-6 contactForm">
-                  <div class="form-group">
-                    <input class="form-control" id="name" type="text" placeholder="Nombre *" required data-validation-required-message="Este campo es requerido!">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="email" type="email" placeholder="Email *" required data-validation-required-message="Este campo es requerido!">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                  <div class="form-group">
-                    <input class="form-control" id="phone" type="tel" placeholder="Teléfono *" required data-validation-required-message="Este campo es requerido!">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="col-md-6 contactForm">
-                  <div class="form-group">
-                    <textarea class="form-control" id="message" placeholder="Mensaje *" required data-validation-required-message="Este campo es requerido!"></textarea>
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-lg-12 text-center">
-                  <div id="success"></div>
-                  <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar Mensaje!</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2017</span>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline quicklinks">
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>-->
 
     <!-- Olimpiadas Modals -->
     <?php
@@ -422,54 +144,61 @@
                       <img class="img-fluid d-block mx-auto" src="'.$row['imagen'].'" alt="">
                       <p>'.$row['descripcion'].'</p>
                       <div class="container">
-                        <div class="row center">
-                          <div class="col-md-6">
-                            <h3>Maratón 5 K</h3>
-                            <div class="row">
-                              <div class="col-md-6">
-                                <h4>Masculino</h4>
-                                <ul class="list-inline">
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-6">
-                                <h4>Femenino</h4>
-                                <ul class="list-inline">
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <h3>Maratón 3 K</h3>
-                            <div class="row">
-                              <div class="col-md-6">
-                                <h4>Masculino</h4>
-                                <ul class="list-inline">
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                                </ul>
-                              </div>
-                              <div class="col-md-6">
-                                <h4>Femenino</h4>
-                                <ul class="list-inline">
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                                  <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <div class="row center">';
+                          $stmt2 = $dbh->prepare("SELECT especialidad.nombre FROM especialidad INNER JOIN combinacion ON combinacion.id_especialidad = especialidad.id_especialidad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY especialidad.nombre");
+                          $stmt2->execute();
+                          $table2 = $stmt2->fetchAll();
+                          foreach ($table2 as $row2) {
+                            if ($row['nombre'] == $row2['nombre']) {
+                              echo '<div class="col-md-12">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <h4>Masculino</h4>
+                                    <ul class="list-inline">
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <h4>Femenino</h4>
+                                    <ul class="list-inline">
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>';
+                            } else {
+                              echo '<div class="col-md-6">
+                                <h3>'.$row['nombre'].' '.$row2['nombre'].'</h3>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <h4>Masculino</h4>
+                                    <ul class="list-inline">
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <h4>Femenino</h4>
+                                    <ul class="list-inline">
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
+                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>';
+                            }
+                          }
+                        echo '</div>
                       </div>
                       <button class="btn btn-primary" data-dismiss="modal" type="button">
                         <i class="fa fa-times"></i>
@@ -483,260 +212,6 @@
         </div>';
       }
     ?>
-
-    <!-- Maratón -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-10 mx-auto">
-                <div class="modal-body">
-                  <!-- Detalles sobre Maratón -->
-                  <h2 class="text-uppercase">Maratón</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="../img/portfolio/futbolfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Threads</li>
-                    <li>Category: Illustration</li>
-                  </ul>
-                  <div class="container">
-                    <div class="row center">
-                      <div class="col-md-6">
-                        <h3>Maratón 5 K</h3>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <h4>Masculino</h4>
-                            <ul class="list-inline">
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                            </ul>
-                          </div>
-                          <div class="col-md-6">
-                            <h4>Femenino</h4>
-                            <ul class="list-inline">
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <h3>Maratón 3 K</h3>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <h4>Masculino</h4>
-                            <ul class="list-inline">
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                            </ul>
-                          </div>
-                          <div class="col-md-6">
-                            <h4>Femenino</h4>
-                            <ul class="list-inline">
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                              <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Voley</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/voleyfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Explore</li>
-                    <li>Category: Graphic Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Ping Pong</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/pingpongfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Finish</li>
-                    <li>Category: Identity</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Basquet</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/basquetfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Lines</li>
-                    <li>Category: Branding</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Maraton</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/ajedrezfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Southwest</li>
-                    <li>Category: Website Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Truco</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/trucofull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Window</li>
-                    <li>Category: Photography</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
