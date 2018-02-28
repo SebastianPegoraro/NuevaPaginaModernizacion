@@ -541,9 +541,12 @@ section#acto{
 
 /*Olimpiadas*/
 .img-chaco {
-    padding-left: 30px;
-    max-width: 30%;
-    height: auto;
+  border: none;
+  height: auto;
+  display: none;
+	margin-right: 20px;
+	height: 50px;
+	width: auto;
 }
 
 .somos {

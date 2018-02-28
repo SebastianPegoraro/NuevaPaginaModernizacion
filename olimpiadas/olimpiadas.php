@@ -84,7 +84,7 @@
         <div class="row">
           <?php
             include 'connect.php';
-
+// Se generan los cuadros de los distintos deportes haciendo una llamada a la base de datos
             $stmt = $dbh->prepare("SELECT * FROM deporte");
             $stmt->execute();
       		  $table = $stmt->fetchAll();
@@ -121,7 +121,7 @@
     <!-- Olimpiadas Modals -->
     <?php
       include 'connect.php';
-
+      //Se generan cada uno de los Modals para cada uno de los deportes de la misma manera que la grilla de mas arriba
       $stmt = $dbh->prepare("SELECT * FROM deporte");
       $stmt->execute();
       $table = $stmt->fetchAll();
@@ -151,51 +151,75 @@
                           foreach ($table2 as $row2) {
                             if ($row['nombre'] == $row2['nombre']) {
                               echo '<div class="col-md-12">
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <h4>Masculino</h4>
-                                    <ul class="list-inline">
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                                    </ul>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <h4>Femenino</h4>
-                                    <ul class="list-inline">
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>';
+                                <div class="row">';
+                              $stmt3 = $dbh->prepare("SELECT sexo.nombre FROM sexo INNER JOIN combinacion ON combinacion.id_sexo = sexo.id_sexo WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY sexo.nombre");
+                              $stmt3->execute();
+                              $table3 = $stmt3->fetchAll();
+                              foreach ($table3 as $row3) {
+                                if (count($table3) < 2) {
+                                  echo '<div class="col-md-12">
+                                        <h4>'.$row3['nombre'].'</h4>
+                                        <ul class="list-inline">';
+                                          $stmt4 = $dbh->prepare("SELECT categoria.nombre FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre");
+                                          $stmt4->execute();
+                                          $table4 = $stmt4->fetchAll();
+                                          foreach ($table4 as $row4) {
+                                            echo '<li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                          }
+                                        echo '</ul>
+                                      </div>';
+                                } else {
+                                  echo '<div class="col-md-6">
+                                        <h4>'.$row3['nombre'].'</h4>
+                                        <ul class="list-inline">';
+                                          $stmt4 = $dbh->prepare("SELECT categoria.nombre FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre");
+                                          $stmt4->execute();
+                                          $table4 = $stmt4->fetchAll();
+                                          foreach ($table4 as $row4) {
+                                            echo '<li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                          }
+                                        echo '</ul>
+                                      </div>';
+                                }
+                              }
+                              echo '</div>
+                                  </div>';
                             } else {
                               echo '<div class="col-md-6">
                                 <h3>'.$row['nombre'].' '.$row2['nombre'].'</h3>
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <h4>Masculino</h4>
-                                    <ul class="list-inline">
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                                    </ul>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <h4>Femenino</h4>
-                                    <ul class="list-inline">
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> Hasta 29 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 30 - 39 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 40 - 49 </button></li><br>
-                                      <li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> 50 en adelante </button></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>';
+                                <div class="row">';
+                                $stmt3 = $dbh->prepare("SELECT sexo.nombre FROM sexo INNER JOIN combinacion ON combinacion.id_sexo = sexo.id_sexo WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY sexo.nombre");
+                                $stmt3->execute();
+                                $table3 = $stmt3->fetchAll();
+                                foreach ($table3 as $row3) {
+                                  if (count($table3) < 2) {
+                                    echo '<div class="col-md-12">
+                                          <h4>'.$row3['nombre'].'</h4>
+                                          <ul class="list-inline">';
+                                            $stmt4 = $dbh->prepare("SELECT categoria.nombre FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                            $stmt4->execute();
+                                            $table4 = $stmt4->fetchAll();
+                                            foreach ($table4 as $row4) {
+                                              echo '<li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                            }
+                                          echo '</ul>
+                                        </div>';
+                                  } else {
+                                    echo '<div class="col-md-6">
+                                          <h4>'.$row3['nombre'].'</h4>
+                                          <ul class="list-inline">';
+                                            $stmt4 = $dbh->prepare("SELECT categoria.nombre FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                            $stmt4->execute();
+                                            $table4 = $stmt4->fetchAll();
+                                            foreach ($table4 as $row4) {
+                                              echo '<li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                            }
+                                          echo '</ul>
+                                        </div>';
+                                  }
+                                }
+                                echo '</div>
+                                    </div>';
                             }
                           }
                         echo '</div>
