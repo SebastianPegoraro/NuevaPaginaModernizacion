@@ -102,7 +102,7 @@
                   <h4>'.$row['nombre'].'</h4>
                   <p class="text-muted">';
               //ojo con el inner join y con las variables dentro de la consulta.
-                      $stmt2 = $dbh->prepare("SELECT sexo.nombre FROM combinacion INNER JOIN sexo ON sexo.id_sexo = combinacion.id_sexo WHERE combinacion.id_deporte=".$row['id_deporte']." GROUP BY sexo.nombre");
+                      $stmt2 = $dbh->prepare("SELECT sexo.nombre FROM combinacion INNER JOIN sexo ON sexo.id_sexo = combinacion.id_sexo WHERE combinacion.id_deporte=".$row['id_deporte']." GROUP BY sexo.nombre ORDER BY sexo.id_sexo");
                       $stmt2->execute();
                       $table2 = $stmt2->fetchAll();
                       foreach($table2 as $row2)	{
@@ -145,14 +145,16 @@
                       <p>'.$row['descripcion'].'</p>
                       <div class="container">
                         <div class="row center">';
-                          $stmt2 = $dbh->prepare("SELECT especialidad.nombre FROM especialidad INNER JOIN combinacion ON combinacion.id_especialidad = especialidad.id_especialidad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY especialidad.nombre");
+                        //Aca es para separar la parte de maraton, para diferenciar entre 5K y 3K
+                          $stmt2 = $dbh->prepare("SELECT especialidad.nombre, especialidad.id_especialidad FROM especialidad INNER JOIN combinacion ON combinacion.id_especialidad = especialidad.id_especialidad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY especialidad.nombre");
                           $stmt2->execute();
                           $table2 = $stmt2->fetchAll();
                           foreach ($table2 as $row2) {
                             if ($row['nombre'] == $row2['nombre']) {
                               echo '<div class="col-md-12">
                                 <div class="row">';
-                              $stmt3 = $dbh->prepare("SELECT sexo.nombre FROM sexo INNER JOIN combinacion ON combinacion.id_sexo = sexo.id_sexo WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY sexo.nombre");
+                                //Separa entre los distintos sexos
+                              $stmt3 = $dbh->prepare("SELECT sexo.nombre, sexo.id_sexo FROM sexo INNER JOIN combinacion ON combinacion.id_sexo = sexo.id_sexo WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY sexo.nombre ORDER BY sexo.id_sexo");
                               $stmt3->execute();
                               $table3 = $stmt3->fetchAll();
                               foreach ($table3 as $row3) {
@@ -160,11 +162,14 @@
                                   echo '<div class="col-md-12">
                                         <h4>'.$row3['nombre'].'</h4>
                                         <ul class="list-inline">';
-                                          $stmt4 = $dbh->prepare("SELECT categoria.nombre FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre");
+                                        //Por ultimo se divide entre las edades de cada deporte
+                                          $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
                                           $stmt4->execute();
                                           $table4 = $stmt4->fetchAll();
                                           foreach ($table4 as $row4) {
-                                            echo '<li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                            //Intento de hacer el boton para ir al formulario de inscripcion a los deportes
+                                            ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                              <button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
                                           }
                                         echo '</ul>
                                       </div>';
@@ -172,7 +177,7 @@
                                   echo '<div class="col-md-6">
                                         <h4>'.$row3['nombre'].'</h4>
                                         <ul class="list-inline">';
-                                          $stmt4 = $dbh->prepare("SELECT categoria.nombre FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre");
+                                          $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
                                           $stmt4->execute();
                                           $table4 = $stmt4->fetchAll();
                                           foreach ($table4 as $row4) {
@@ -188,7 +193,7 @@
                               echo '<div class="col-md-6">
                                 <h3>'.$row['nombre'].' '.$row2['nombre'].'</h3>
                                 <div class="row">';
-                                $stmt3 = $dbh->prepare("SELECT sexo.nombre FROM sexo INNER JOIN combinacion ON combinacion.id_sexo = sexo.id_sexo WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY sexo.nombre");
+                                $stmt3 = $dbh->prepare("SELECT sexo.nombre, sexo.id_sexo FROM sexo INNER JOIN combinacion ON combinacion.id_sexo = sexo.id_sexo WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY sexo.nombre ORDER BY sexo.id_sexo");
                                 $stmt3->execute();
                                 $table3 = $stmt3->fetchAll();
                                 foreach ($table3 as $row3) {
@@ -196,7 +201,7 @@
                                     echo '<div class="col-md-12">
                                           <h4>'.$row3['nombre'].'</h4>
                                           <ul class="list-inline">';
-                                            $stmt4 = $dbh->prepare("SELECT categoria.nombre FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                            $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
                                             $stmt4->execute();
                                             $table4 = $stmt4->fetchAll();
                                             foreach ($table4 as $row4) {
@@ -208,7 +213,7 @@
                                     echo '<div class="col-md-6">
                                           <h4>'.$row3['nombre'].'</h4>
                                           <ul class="list-inline">';
-                                            $stmt4 = $dbh->prepare("SELECT categoria.nombre FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                            $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
                                             $stmt4->execute();
                                             $table4 = $stmt4->fetchAll();
                                             foreach ($table4 as $row4) {

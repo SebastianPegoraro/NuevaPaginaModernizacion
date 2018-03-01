@@ -225,7 +225,7 @@
             <ul class="timeline">
               <li>
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/1.png" alt="">
+                  <img class="rounded-circle img-fluid" src="img/premio/premio.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
