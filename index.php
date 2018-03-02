@@ -217,7 +217,8 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Premio</h2>
-            <h3 class="section-subheading text-muted">Estos son los ganadores desde el inicio del Premio al Empleado Público!</h3>
+            <h3 class="section-subheading text-muted">Se da inicio a este gran Proyecto que tiene como fin principal reconocer y agasajar a los servidores públicos de la provincia del Chaco. <br>
+              En esta oportunidad, quince jurisdicciones del participaron de la selección del Empleado Público del Año, que fue la novedad del acto de celebración del día en que se homenajea a los trabajadores.</h3>
           </div>
         </div>
         <div class="row">
@@ -230,10 +231,12 @@
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h2 class="fuente">2010</h2>
-                    <h4 class="subheading">Bruce Wayne</h4>
+                    <h2 class="subheading"> Ganadores </h2>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted"><strong>Armando Higinio Romero</strong> (A.P.A.); <strong>Ana Catalina Gandola</strong> (T.G.P.); <strong>Luis Antonio Jarque</strong> (I.P.D.U.V.); <strong>Luis Alberto Pérez Barbosa</strong> (M.S.P.);
+                      <strong>Juan Carlos Totaro Escuder</strong> (S.P.E.R.); <strong>Belquis Eva Gimeno</strong> (M.P.A.); <strong>Miguel Ángel Córdoba</strong> (M.I.S.P.); <strong>Luis Sergio Mailet</strong> (M.G.J.T.); <strong>Alberto Sánchez La Cruz</strong> (I.I.F.A.);
+                      <strong>Miguel Ángel Sanchez</strong> (Gobernación); <strong>Lidia Noemí Sampayo</strong> (M.E.C.T.); <strong>Luis Romero</strong> (M.E.I.E.); <strong>Oscar Matienzo</strong> (M.D.S.D.H.);<strong> Sonia Alegría Acetti</strong> (I.C.C.); <strong>Delia Edy Rosales</strong> (C.G.P.). </p>
                   </div>
                 </div>
               </li>
@@ -244,80 +247,105 @@
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h2 class="fuente">2011</h2>
-                    <h4 class="subheading">Clark Kent</h4>
+                    <h2 class="subheading"> Ganadores </h2>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted"><strong>Hugo Pascual Bargas</strong> (Gobernación); <strong>Domingo Miguel Cerdán</strong> (A.P.A.);<strong> Miguel Ángel Morales</strong> (C.G.);<strong> Norma Alejandra Pons</strong> (F.E.);
+                      <strong>Mirtha Zulma Cabral</strong> (I.C); <strong>Erica Mariela Wuerich</strong> (I.P.D.U.V.); <strong>Norma Zarate García </strong>(INSSSEP); <strong>Alicia Silva de Gigli</strong> (M.E.I.E.);
+                      <strong>Mercedes Ramona Ojeda</strong> (M.G.J.S.); <strong>Juan Carlos Aguirre </strong>(M.P.A.); <strong>Floraida Ayala</strong> (M.S.P.). </p>
                   </div>
                 </div>
               </li>
               <li>
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/3.png" alt="">
+                  <img class="rounded-circle img-fluid" src="img/premio/2012.JPG" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h2 class="fuente">2012</h2>
-                    <h4 class="subheading">Red Beard</h4>
+                    <h4 class="subheading">Eduardo Enrique Cesario</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted"><strong>Capitanich</strong> felicitó a los empleados públicos.
+                      “Trabajar en dependencias del Estado tiene un agregado adicional de los trabajadores que es el de la vocación de servicio.
+                       Esto implica servir al prójimo, que no es otra cosa que amar al prójimo, por eso es que hoy los saludos con el mayor afecto de siempre”, </p>
                   </div>
                 </div>
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/4.png" alt="">
+                  <img class="rounded-circle img-fluid" src="img/premio/2013.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h2 class="fuente">2013</h2>
-                    <h4 class="subheading">Nicola Tesla</h4>
+                    <h3 class="subheading">Francisco Pimienta</h3>
+                    <h6 class="text-muted">(Ministerio de Planificación y Medio Ambiente)</h6>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">Dicho evento fue declarado de Interes Provincial. Los ganadores recibieron la suma en pesos equivalente al medio aguinaldo y el reconocimiento
+                      que incluirá la exhibición de su retrato con la leyenda “Empleado Público del año de la Jurisdicción XX”.</p>
                   </div>
                 </div>
               </li>
               <li>
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/5.png" alt="">
+                  <img class="rounded-circle img-fluid" src="img/premio/2014.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h2 class="fuente">2014</h2>
-                    <h4 class="subheading">Barry Allen</h4>
+                    <h2 class="subheading"> Inés Diaz </h2>
+                    <h6 class="text-muted">(INSSSeP)</h6>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">El gobernador Bacileff Ivanoff destacó la importancia del empleado público del Poder Ejecutivo, entes autárquicos y diferentes reparticiones en el proceso de ejecución de las políticas del Estado.</p>
                   </div>
                 </div>
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/6.png" alt="">
+                  <img class="rounded-circle img-fluid" src="img/premio/2015.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h2 class="fuente">2015</h2>
-                    <h4 class="subheading">Esteban Quito</h4>
+                    <h4 class="subheading">María Donata Frutos </h4>
+                    <h6 class="text-muted">(Ministerio de Planificación y Ambiente)</h6>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">Su elección fue resultado de la votación de los propios ciudadanos chaqueños quienes, a través del portal oficial del gobierno, eligieron entre los perfiles de los ganadores en cada Jurisdicción aquel que, a su criterio, respondía mejor al perfil de “Buen Empleado Público”.</p>
                   </div>
                 </div>
               </li>
               <li>
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/7.png" alt="">
+                  <img class="rounded-circle img-fluid" src="img/premio/2016.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
                     <h2 class="fuente">2016</h2>
-                    <h4 class="subheading">Cosme Fulanito</h4>
+                    <h4 class="subheading">Abelino Cáceres </h4>
+                    <h6 class="text-muted">(Ministerio de Infraestructura)</h6>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Acá va la descripción.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">El gobernador Domingo Peppo dijo “Debemos darles herramientas a los trabajadores para que se sigan capacitando, que puedan perfeccionarse y sentirse a gusto con su trabajo”.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="img/premio/2017.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h2 class="fuente">2017</h2>
+                    <h4 class="subheading">María Teresa González</h4>
+                    <h6 class="text-muted">(Ministerio de Planificación, Ambiente e Innovación Tecnológica)</h6>
+                  </div>
+                  <div class="timeline-body">
+                    <p class="text-muted">El Premio "Empleado Público del Año" se realizó con el objetivo de reconocer públicamente la trayectoria de aquellos empleados públicos que en cada
+                      jurisdicción mantienen un perfil considerado ejemplar.</p>
                   </div>
                 </div>
               </li>

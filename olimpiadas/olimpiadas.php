@@ -169,7 +169,7 @@
                                           foreach ($table4 as $row4) {
                                             //Intento de hacer el boton para ir al formulario de inscripcion a los deportes
                                             ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
-                                              <button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
+                                              <button class="btn btn-danger" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
                                           }
                                         echo '</ul>
                                       </div>';
