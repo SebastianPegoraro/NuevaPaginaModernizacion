@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Empleado Publico</title>
+    <title>Empleado Público</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
               <a class="nav-link js-scroll-trigger" href="#acto">Acto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#nosotros">Quienes Somos</a>
+              <a class="nav-link js-scroll-trigger" href="#nosotros">Quiénes Somos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contacto">Contacto</a>
@@ -70,7 +70,7 @@
       <div class="container">
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->
-          <div class="intro-heading text-uppercase">Empleado Público</div>
+          <div class="intro-heading text-uppercase">Empleado Público 2018</div>
           <a id="btn" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#eventos"> Ver Más! </a>
         </div>
       </div>
@@ -84,7 +84,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Eventos!</h2>
-            <h3 class="section-subheading text-muted">Ya te estás preparando para este 2018?</h3>
+            <h3 class="section-subheading text-muted">Ya estás preparado para este 2018?</h3>
           </div>
         </div>
         <div class="row text-center">
@@ -93,14 +93,14 @@
               <img class="mx-auto rounded-circle" src="img/eventos/olimpiadas.png" alt="">
             </div>
             <h4 class="service-heading Medium">Olimpiadas</h4>
-            <p class="text-muted">Prerate vos y tu equipo para participar es las Olimpiadas del Empleado Publico 2018!</p>
+            <p class="text-muted">Prerate vos y tu equipo para participar es las Olimpiadas del Empleado Público 2018!</p>
           </div>
           <div class="col-md-4">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="img/eventos/premio.png" alt="">
             </div>
             <h4 class="service-heading Medium">Premio</h4>
-            <p class="text-muted">Este año puede ser tuyo! Inscribite y decinos por que mereces el premio al Empleado Publico 2018.</p>
+            <p class="text-muted">Este año puede ser tuyo! Inscribite y decinos por qué mereces el premio al Empleado Público 2018.</p>
           </div>
           <div class="col-md-4">
             <div class="team-member">
@@ -376,14 +376,14 @@
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="img/acto/25.jpg" alt="">
               <h4>25 Años de Servicios</h4>
-              <p class="text-muted">Agentes publicos con 25 años de servicios.</p>
+              <p class="text-muted">Agentes públicos con 25 años de servicios.</p>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="img/acto/jubi.jpg" alt="">
               <h4>Jubilados</h4>
-              <p class="text-muted">Agentes publicos que estén a punto de jubilarse.</p>
+              <p class="text-muted">Agentes públicos que estén a punto de jubilarse.</p>
             </div>
           </div>
         </div>
@@ -423,7 +423,7 @@
       <div class="container">
         <div class="row text-center">
           <div class="col-sm-12">
-            <h1 style="color: grey;">QUIENES SOMOS?</h1>
+            <h1 style="color: grey;">QUIÉNES SOMOS?</h1>
             <p style="color: grey;">Somos la Dirección General de Modernización del Estado dependiente de la Secretaría General de Gobierno y Coordinación la cual tiene como misión
               <strong style="color: grey;">modernizar y fortalecer</strong> a las Jurisdicciones  de la Administración Pública del Poder Ejecutivo.</p>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
