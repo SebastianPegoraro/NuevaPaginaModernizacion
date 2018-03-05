@@ -64,6 +64,10 @@
     <!-- Header -->
     <header class="masthead">
       <div class="container">
+        <video id="bgvid" playsinline autoplay muted loop>
+        <source src="../img/videoplayback.webm" type="video/webm">
+        <source src="../img/videoplayback.mp4" type="video/mp4">
+        </video>
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->
           <div class="intro-heading text-uppercase">Olimpíadas 2018!</div>

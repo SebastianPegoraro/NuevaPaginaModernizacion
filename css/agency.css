@@ -320,7 +320,7 @@ section#olimpiadas{
     width: 2px;
     margin-left: -1.5px;
     content: '';
-    background-color: #e9ecef; }
+    background-color: rgba(35, 164, 243, 0.5); }
   .timeline > li {
     position: relative;
     min-height: 50px;
@@ -355,7 +355,7 @@ section#olimpiadas{
       margin-left: 0;
       text-align: center;
       color: white;
-      border: 7px solid #e9ecef;
+      border: 5px solid rgba(35, 164, 243, 0.2);
       border-radius: 100%;
       background-color: #23A4F3; }
       .timeline > li .timeline-image h4 {
@@ -559,4 +559,21 @@ section#acto{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+}
+
+video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  z-index: -100;
+
+  background-size: cover;
+}

@@ -226,7 +226,7 @@
             <ul class="timeline">
               <li>
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/premio.jpg" alt="">
+                  <img class="rounded-circle img-fluid" src="img/premio/empleado.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
@@ -242,7 +242,7 @@
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="img/premio/2.png" alt="">
+                  <img class="rounded-circle img-fluid" src="img/premio/empleado.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
