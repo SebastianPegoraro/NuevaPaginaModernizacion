@@ -66,7 +66,7 @@
     </nav>
 
     <!-- Header -->
-    <header class="masthead">
+    <header class="masthead" style="background-color: black;">
       <div class="container">
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->

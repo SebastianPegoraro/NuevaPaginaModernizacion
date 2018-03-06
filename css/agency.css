@@ -145,14 +145,15 @@ body {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/portada.jpg");
+  /*background-image: url("../img/portada.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;*/
+}
   header.masthead .intro-text {
     padding-top: 150px;
     padding-bottom: 100px; }
@@ -192,8 +193,9 @@ header.masthead {
   text-transform: none; }
 
 section#olimpiadas{
-  /*background-color: rgba(152, 195, 80, 0.2);*/
-  background-color: rgba(72, 173, 66, 0.15);
+  /*background-color: rgba(152, 195, 80, 0.2);
+  background-color: rgba(72, 173, 66, 0.15);*/
+  background-color: #DCDCDC;
 }
 #olimpiadas .portfolio-item {
   right: 0;

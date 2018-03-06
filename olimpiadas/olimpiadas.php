@@ -104,16 +104,6 @@
                 </a>
                 <div class="portfolio-caption">
                   <h4>'.$row['nombre'].'</h4>
-                  <p class="text-muted">';
-              //ojo con el inner join y con las variables dentro de la consulta.
-                      $stmt2 = $dbh->prepare("SELECT sexo.nombre FROM combinacion INNER JOIN sexo ON sexo.id_sexo = combinacion.id_sexo WHERE combinacion.id_deporte=".$row['id_deporte']." GROUP BY sexo.nombre ORDER BY sexo.id_sexo");
-                      $stmt2->execute();
-                      $table2 = $stmt2->fetchAll();
-                      foreach($table2 as $row2)	{
-                        echo $row2['nombre'].'<br>'; //para que imprima un "enter" luego de cada sexo pongo el <br>
-                      }
-              //aca "sigue" el echo
-              echo '</p>
                 </div>
               </div>';
             }
@@ -163,29 +153,46 @@
                               $table3 = $stmt3->fetchAll();
                               foreach ($table3 as $row3) {
                                 if (count($table3) < 2) {
-                                  echo '<div class="col-md-12">
-                                        <h4>'.$row3['nombre'].'</h4>
-                                        <ul class="list-inline">';
-                                        //Por ultimo se divide entre las edades de cada deporte
-                                          $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
-                                          $stmt4->execute();
-                                          $table4 = $stmt4->fetchAll();
-                                          foreach ($table4 as $row4) {
-                                            //Intento de hacer el boton para ir al formulario de inscripcion a los deportes
-                                            ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
-                                              <button class="btn btn-danger" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
-                                          }
-                                        echo '</ul>
-                                      </div>';
+                                  echo '<div class="col-md-5"></div>
+                                    <div class="col-md-2">
+                                    <h4>'.$row3['nombre'].'</h4>
+                                    <ul class="list-inline">';
+                                    //Por ultimo se divide entre las edades de cada deporte
+                                      $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                      $stmt4->execute();
+                                      $table4 = $stmt4->fetchAll();
+                                      foreach ($table4 as $row4) {
+                                        //Intento de hacer el boton para ir al formulario de inscripcion a los deportes
+                                        //en caso de tener una sola categoria (mixto)
+                                        ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                          <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
+                                      }
+                                  echo '</ul>
+                                  </div>';
+                                } else if(count($table3) < 3){
+                                  //en caso de tener 2 categorias (fem-masc)
+                                  echo '<div class="col-md-2"></div>
+                                    <div class="col-md-3">
+                                      <h4>'.$row3['nombre'].'</h4>
+                                      <ul class="list-inline">';
+                                        $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                        $stmt4->execute();
+                                        $table4 = $stmt4->fetchAll();
+                                        foreach ($table4 as $row4) {
+                                          echo '<li><button class="btn btn-danger btn-block" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                        }
+                                      echo '</ul>
+                                    </div>';
                                 } else {
-                                  echo '<div class="col-md-6">
+                                  //en caso de tener varias categorias (fem-masc-mix-doble)
+                                  echo '<div class="col-md-4">
                                         <h4>'.$row3['nombre'].'</h4>
                                         <ul class="list-inline">';
                                           $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
                                           $stmt4->execute();
                                           $table4 = $stmt4->fetchAll();
                                           foreach ($table4 as $row4) {
-                                            echo '<li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                            echo '<li><button class="btn btn-danger btn-block" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
                                           }
                                         echo '</ul>
                                       </div>';
@@ -209,7 +216,7 @@
                                             $stmt4->execute();
                                             $table4 = $stmt4->fetchAll();
                                             foreach ($table4 as $row4) {
-                                              echo '<li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                              echo '<li><button class="btn btn-danger btn-block" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
                                             }
                                           echo '</ul>
                                         </div>';
@@ -221,7 +228,7 @@
                                             $stmt4->execute();
                                             $table4 = $stmt4->fetchAll();
                                             foreach ($table4 as $row4) {
-                                              echo '<li><button class="btn btn-danger" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
+                                              echo '<li><button class="btn btn-danger btn-block" data-dismiss="modal" type="button"><i class="fa fa-pencil"></i> '.$row4['nombre'].' </button></li><br>';
                                             }
                                           echo '</ul>
                                         </div>';
@@ -245,6 +252,7 @@
         </div>';
       }
     ?>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
