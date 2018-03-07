@@ -553,8 +553,8 @@ section#acto{
 
 .somos {
   text-align: center;
-  color: white;
-  background-image: url("../img/somos.jpg");
+  color: black;
+  background: #DCDCDC;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -578,4 +578,13 @@ video {
   z-index: -100;
 
   background-size: cover;
+
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.equipo {
+  width: 140px;
+  height: 180px;
+  border: 7px solid #fff;
 }

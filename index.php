@@ -19,13 +19,12 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <link href="css/font.css" rel="stylesheet" type="text/css">
-    <link href="css/test.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
     <link href="css/agency.css" rel="stylesheet">
-
-
+    <link href="css/font.css" rel="stylesheet" type="text/css">
+    <link href="css/test.css" rel="stylesheet" type="text/css">
+    <link href="css/carousel.css" rel="stylesheet" type="text/css">
 
   </head>
 
@@ -71,7 +70,7 @@
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->
           <div class="intro-heading text-uppercase">Empleado Público 2018</div>
-          <a id="btn" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#eventos"> Ver Más! </a>
+          <a id="btn" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#eventos"> Consultar Eventos! </a>
         </div>
       </div>
     </header>
@@ -90,7 +89,7 @@
         <div class="row text-center">
           <div class="col-md-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/eventos/olimpiadas.png" alt="">
+              <a href="olimpiadas/olimpiadas.php"><img class="mx-auto rounded-circle" src="img/eventos/olimpiadas.png" alt=""></a>
             </div>
             <h4 class="service-heading Medium">Olimpiadas</h4>
             <p class="text-muted">Prerate vos y tu equipo para participar es las Olimpiadas del Empleado Público 2018!</p>
@@ -395,41 +394,332 @@
       </div>
     </section>
 
-    <!-- Logos -->
-    <section class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/1.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/2.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/3.png" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Who we are -->
+    <!-- Quienes Somos -->
     <section class="somos" id="nosotros">
       <div class="container">
         <div class="row text-center">
           <div class="col-sm-12">
-            <h1 style="color: grey;">QUIÉNES SOMOS?</h1>
-            <p style="color: grey;">Somos la Dirección General de Modernización del Estado dependiente de la Secretaría General de Gobierno y Coordinación la cual tiene como misión
-              <strong style="color: grey;">modernizar y fortalecer</strong> a las Jurisdicciones  de la Administración Pública del Poder Ejecutivo.</p>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+            <h1>QUIÉNES SOMOS?</h1>
+            <p>Somos la Dirección General de Modernización del Estado dependiente de la Secretaría General de Gobierno y Coordinación la cual tiene como misión
+              <strong>modernizar y fortalecer</strong> a las Jurisdicciones  de la Administración Pública del Poder Ejecutivo.</p>
           </div>
         </div>
+        <div class="row">
+          <h1>Direccion 1</h1>
+      		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+            <div class="MultiCarousel-inner">
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Ariel</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Edward</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <p>Alphonse</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <p>Alex</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <p>Luis</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <p>Armstrong</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <p>Jack</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Sparrow</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Bill</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <p>Gates</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <p>Pepita</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <p>Pistolera</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <p>Rod</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <p>Flanders</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Apu</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Ble</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary leftLst"><</button>
+            <button class="btn btn-primary rightLst">></button>
+          </div>
+      	</div>
+        <div class="row">
+          <h1>Direccion 2</h1>
+      		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+            <div class="MultiCarousel-inner">
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Ariel</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Edward</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <p>Alphonse</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <p>Alex</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <p>Luis</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <p>Armstrong</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <p>Jack</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Sparrow</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Bill</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <p>Gates</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <p>Pepita</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <p>Pistolera</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <p>Rod</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <p>Flanders</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Apu</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Ble</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary leftLst"><</button>
+            <button class="btn btn-primary rightLst">></button>
+          </div>
+      	</div>
+        <div class="row">
+          <h1>Direccion 3</h1>
+      		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+            <div class="MultiCarousel-inner">
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Ariel</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Edward</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <p>Alphonse</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <p>Alex</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <p>Luis</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <p>Armstrong</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <p>Jack</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Sparrow</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Bill</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <p>Gates</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <p>Pepita</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <p>Pistolera</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <p>Rod</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <p>Flanders</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Apu</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Ble</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary leftLst"><</button>
+            <button class="btn btn-primary rightLst">></button>
+          </div>
+      	</div>
       </div>
     </section>
 
@@ -472,6 +762,29 @@
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <a href="#">
+              <img class="img-fluid d-block mx-auto" src="img/logos/1.png" alt="">
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <a href="#">
+              <img class="img-fluid d-block mx-auto" src="img/logos/2.png" alt="">
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <a href="#">
+              <img class="img-fluid d-block mx-auto" src="img/logos/3.png" alt="">
+            </a>
           </div>
         </div>
       </div>
@@ -736,6 +1049,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.js"></script>
+    <script src="js/carousel.js"></script>
 
   </body>
 
