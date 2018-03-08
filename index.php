@@ -89,7 +89,7 @@
         <div class="row text-center">
           <div class="col-md-4">
             <div class="team-member">
-              <a href="olimpiadas/olimpiadas.php"><img class="mx-auto rounded-circle" src="img/eventos/olimpiadas.png" alt=""></a>
+              <a href="olimpiadas/"><img class="mx-auto rounded-circle" src="img/eventos/olimpiadas.png" alt=""></a>
             </div>
             <h4 class="service-heading Medium">Olimpiadas</h4>
             <p class="text-muted">Prerate vos y tu equipo para participar es las Olimpiadas del Empleado Público 2018!</p>
@@ -343,8 +343,115 @@
               <strong>modernizar y fortalecer</strong> a las Jurisdicciones  de la Administración Pública del Poder Ejecutivo.</p>
           </div>
         </div>
+        <br><br><br><br>
         <div class="row">
-          <h1>Direccion 1</h1>
+          <h3>Dirección General de Modernización del Estado</h3>
+      		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+            <div class="MultiCarousel-inner Medium">
+              <div class="item">
+                <div class="jefa">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Ariel</p>
+                  <p>Directora</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/SEBA.gif" alt="" class="equipo">
+                  <p>Edward</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <p>Alphonse</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <p>Alex</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <p>Luis</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <p>Armstrong</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <p>Jack</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Sparrow</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Bill</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <p>Gates</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <p>Pepita</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <p>Pistolera</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <p>Rod</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <p>Flanders</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <p>Apu</p>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pad15">
+                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <p>Ble</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary leftLst"><</button>
+            <button class="btn btn-primary rightLst">></button>
+          </div>
+      	</div>
+        <div class="row">
+          <h3>Dirección Innovación de Gestión</h3>
       		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
             <div class="MultiCarousel-inner">
               <div class="item">
@@ -449,112 +556,7 @@
           </div>
       	</div>
         <div class="row">
-          <h1>Direccion 2</h1>
-      		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
-            <div class="MultiCarousel-inner">
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
-                  <p>Ariel</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
-                  <p>Edward</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/3.png" alt="" class="equipo">
-                  <p>Alphonse</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/4.png" alt="" class="equipo">
-                  <p>Alex</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/5.png" alt="" class="equipo">
-                  <p>Luis</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/6.png" alt="" class="equipo">
-                  <p>Armstrong</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/7.png" alt="" class="equipo">
-                  <p>Jack</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
-                  <p>Sparrow</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
-                  <p>Bill</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/3.png" alt="" class="equipo">
-                  <p>Gates</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/4.png" alt="" class="equipo">
-                  <p>Pepita</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/5.png" alt="" class="equipo">
-                  <p>Pistolera</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/6.png" alt="" class="equipo">
-                  <p>Rod</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/7.png" alt="" class="equipo">
-                  <p>Flanders</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
-                  <p>Apu</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
-                  <p>Ble</p>
-                </div>
-              </div>
-            </div>
-            <button class="btn btn-primary leftLst"><</button>
-            <button class="btn btn-primary rightLst">></button>
-          </div>
-      	</div>
-        <div class="row">
-          <h1>Direccion 3</h1>
+          <h3>Dirección de Planificación Organizacional</h3>
       		<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
             <div class="MultiCarousel-inner">
               <div class="item">

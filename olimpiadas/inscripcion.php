@@ -25,7 +25,9 @@
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="phonenumber"><span class="req">* </span> Jurisdicción: </label>
-                    <input required type="text" name="jurisdiccion" class="form-control" maxlength="28" onkeyup="validatephone(this);"/>
+                    <select class="form-control" id="jurisdiccion" name="jurisdiccion">
+                      <option selected disabled>Seleccione una Jurisdiccion</option>
+                    </select>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="firstname"><span class="req">* </span> Nombre Equipo: </label>
@@ -71,12 +73,13 @@
     </section>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <script src="../js/ajax.js"></script>
 
     <script src="../js/inscripcion.js"></script>
   </body>
