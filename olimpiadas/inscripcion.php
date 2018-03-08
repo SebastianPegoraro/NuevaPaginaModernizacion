@@ -29,7 +29,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="firstname"><span class="req">* </span> Nombre Equipo: </label>
-                    <input class="form-control" type="text" name="nomequipo" onkeyup = "Validate(this)" required />
+                    <input class="form-control" type="text" name="nomequipo" onkeyup="Validate(this)" required/>
                   </div>
                 </div>
 

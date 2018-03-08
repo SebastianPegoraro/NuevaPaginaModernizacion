@@ -122,90 +122,28 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
+          <?php
+            include 'olimpiadas/connect.php';
+            // Se generan los cuadros de los distintos deportes haciendo una llamada a la base de datos
+            $stmt = $dbh->prepare("SELECT * FROM deporte");
+            $stmt->execute();
+            $table = $stmt->fetchAll();
+            foreach($table as $row)	{
+              echo '<div class="col-md-3 col-sm-6 portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal'.$row['id_deporte'].'">
+                  <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                      <i class="fa fa-plus fa-3x"></i>
+                    </div>
+                  </div>
+                  <img class="img-fluid" src="'.substr($row['imagen'],1).'" alt="">
+                </a>
+                <div class="portfolio-caption">
+                  <h4>'.$row['nombre'].'</h4>
                 </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/futbol.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Futbol</h4>
-              <p class="text-muted">Hombres-Mujeres-Mixtos</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/voley.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Voley</h4>
-              <p class="text-muted">Hombres-Mujeres-Mixtos</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/pingpong.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Ping Pong</h4>
-              <p class="text-muted">Hombres-Mujeres-Mixtos</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/basquet.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Basquet</h4>
-              <p class="text-muted">Hombres-Mujeres-Mixtos</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/ajedrez.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Maraton</h4>
-              <p class="text-muted">Menores de 45-Mayores de 45</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/truco.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              <h4>Truco</h4>
-              <p class="text-muted">Hombres-Mujeres-Mixtos</p>
-            </div>
-          </div>
+              </div>';
+            }
+          ?>
         </div>
       </div>
     </section>
@@ -831,210 +769,139 @@
     </footer>-->
 
     <!-- Olimpiadas Modals -->
-
-    <!-- Futbol -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Futbol</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/futbolfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Threads</li>
-                    <li>Category: Illustration</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
+    <?php
+      include 'olimpiadas/connect.php';
+      //Se generan cada uno de los Modals para cada uno de los deportes de la misma manera que la grilla de mas arriba
+      $stmt = $dbh->prepare("SELECT * FROM deporte");
+      $stmt->execute();
+      $table = $stmt->fetchAll();
+      foreach($table as $row)	{
+        echo '<div class="portfolio-modal modal fade" id="portfolioModal'.$row['id_deporte'].'" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                  <div class="rl"></div>
+                </div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 mx-auto">
+                    <div class="modal-body">
+                      <!-- Detalles -->
+                      <h2 class="text-uppercase">'.$row['nombre'].'</h2>
+                      <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
+                      <img class="img-fluid d-block mx-auto" src="'.substr($row['imagen'],1).'" alt="">
+                      <p>'.$row['descripcion'].'</p>
+                      <div class="container">
+                        <div class="row center">';
+                        //Aca es para separar la parte de maraton, para diferenciar entre 5K y 3K
+                          $stmt2 = $dbh->prepare("SELECT especialidad.nombre, especialidad.id_especialidad FROM especialidad INNER JOIN combinacion ON combinacion.id_especialidad = especialidad.id_especialidad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY especialidad.nombre");
+                          $stmt2->execute();
+                          $table2 = $stmt2->fetchAll();
+                          foreach ($table2 as $row2) {
+                            if ($row['nombre'] == $row2['nombre']) {
+                              echo '<div class="col-md-12">
+                                <div class="row">';
+                                //Separa entre los distintos sexos
+                              $stmt3 = $dbh->prepare("SELECT sexo.nombre, sexo.id_sexo FROM sexo INNER JOIN combinacion ON combinacion.id_sexo = sexo.id_sexo WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY sexo.nombre ORDER BY sexo.id_sexo");
+                              $stmt3->execute();
+                              $table3 = $stmt3->fetchAll();
+                              foreach ($table3 as $row3) {
+                                if (count($table3) < 2) {
+                                  echo '<div class="col-md-5"></div>
+                                    <div class="col-md-2">
+                                    <h4>'.$row3['nombre'].'</h4>
+                                    <ul class="list-inline">';
+                                    //Por ultimo se divide entre las edades de cada deporte
+                                      $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                      $stmt4->execute();
+                                      $table4 = $stmt4->fetchAll();
+                                      foreach ($table4 as $row4) {
+                                        //Intento de hacer el boton para ir al formulario de inscripcion a los deportes
+                                        //en caso de tener una sola categoria (mixto) ajedrez,truco,loba
+                                        ?> <li><a href="./olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                          <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
+                                      }
+                                  echo '</ul>
+                                  </div>';
+                                } else if(count($table3) < 3){
+                                  //en caso de tener 2 categorias (fem-masc)
+                                  echo '<div class="col-md-2"></div>
+                                    <div class="col-md-3">
+                                      <h4>'.$row3['nombre'].'</h4>
+                                      <ul class="list-inline">';
+                                        $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                        $stmt4->execute();
+                                        $table4 = $stmt4->fetchAll();
+                                        foreach ($table4 as $row4) {
+                                          //en caso de tener dos categorias (hombre - mujer) futbol,volei,basquet
+                                          ?> <li><a href="./olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                            <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
+                                        }
+                                      echo '</ul>
+                                    </div>';
+                                } else {
+                                  //en caso de tener varias categorias (fem-masc-mix-doble)
+                                  echo '<div class="col-md-4">
+                                        <h4>'.$row3['nombre'].'</h4>
+                                        <ul class="list-inline">';
+                                          $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                          $stmt4->execute();
+                                          $table4 = $stmt4->fetchAll();
+                                          foreach ($table4 as $row4) {
+                                            //en caso de tener mas categorias (hombre - mujer - mixto - dobles) tenis de mesa
+                                            ?> <li><a href="./olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                              <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
+                                          }
+                                        echo '</ul>
+                                      </div>';
+                                }
+                              }
+                              echo '</div>
+                                  </div>';
+                            } else {
+                              echo '<div class="col-md-6">
+                                <h3>'.$row['nombre'].' '.$row2['nombre'].'</h3>
+                                <div class="row">';
+                                $stmt3 = $dbh->prepare("SELECT sexo.nombre, sexo.id_sexo FROM sexo INNER JOIN combinacion ON combinacion.id_sexo = sexo.id_sexo WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY sexo.nombre ORDER BY sexo.id_sexo");
+                                $stmt3->execute();
+                                $table3 = $stmt3->fetchAll();
+                                foreach ($table3 as $row3) {
+                                  if (count($table3) < 3) {
+                                    echo '<div class="col-md-6">
+                                          <h4>'.$row3['nombre'].'</h4>
+                                          <ul class="list-inline">';
+                                            $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                            $stmt4->execute();
+                                            $table4 = $stmt4->fetchAll();
+                                            foreach ($table4 as $row4) {
+                                              ?> <li><a href="./olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                                <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
+                                            }
+                                          echo '</ul>
+                                        </div>';
+                                  }
+                                }
+                                echo '</div>
+                                    </div>';
+                            }
+                          }
+                        echo '</div>
+                      </div>
+                      <button class="btn btn-primary" data-dismiss="modal" type="button">
+                        <i class="fa fa-times"></i>
+                        Cerrar</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </div>';
+      }
+    ?>
 
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Voley</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/voleyfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Explore</li>
-                    <li>Category: Graphic Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Ping Pong</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/pingpongfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Finish</li>
-                    <li>Category: Identity</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Basquet</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/basquetfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Lines</li>
-                    <li>Category: Branding</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Maraton</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/ajedrezfull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Southwest</li>
-                    <li>Category: Website Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Truco</h2>
-                  <p class="item-intro text-muted">Detalles a tener en cuenta a la hora de participar.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/trucofull.jpg" alt="">
-                  <p>Acá va la descripción. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Window</li>
-                    <li>Category: Photography</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
-                    Cerrar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
