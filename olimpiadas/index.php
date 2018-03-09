@@ -69,8 +69,8 @@
     <header class="masthead">
       <div class="container">
         <video id="bgvid" playsinline autoplay muted loop>
-        <source src="../img/videoplayback.webm" type="video/webm">
-        <source src="../img/videoplayback.mp4" type="video/mp4">
+        <source src="../img/ACTO_COLOR_VERDE.webm" type="video/webm">
+        <source src="../img/ACTO_COLOR_VERDE.mp4" type="video/mp4">
         </video>
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->

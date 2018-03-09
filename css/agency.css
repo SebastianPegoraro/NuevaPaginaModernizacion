@@ -578,9 +578,6 @@ video {
   z-index: -100;
 
   background-size: cover;
-
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
 }
 
 .equipo {

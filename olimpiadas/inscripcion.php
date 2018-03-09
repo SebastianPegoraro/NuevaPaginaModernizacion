@@ -15,51 +15,72 @@
     <link href="../css/inscripcion.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <?php
+      $deporte = $_REQUEST['deporte'];
+      $sexo = $_REQUEST['sexo'];
+      $especialidad = $_REQUEST['especialidad'];
+      $categoria = $_REQUEST['categoria'];
+      $jugadores = $_REQUEST['jugadores'];
+    ?>
+
     <section>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <form action="" method="post" id="fileForm" role="form">
-              <fieldset><legend class="text-center">Valid information is required to register. <span class="req"><small> required *</small></span></legend>
+              <fieldset><legend class="text-center"><h1>Valid information is required to register. <span class="req"><small> required *</small></span></h1></legend>
 
                 <div class="row">
-                  <div class="form-group col-md-6">
-                    <label for="phonenumber"><span class="req">* </span> Jurisdicción: </label>
-                    <select class="form-control" id="jurisdiccion" name="jurisdiccion">
+                  <div class="form-group col-xs-12 col-md-6">
+                    <label for="jurisdiccion"><span class="req">* </span> Jurisdicción: </label>
+                    <select class="form-control" id="jurisdiccion" name="jurisdiccion" required>
                       <option selected disabled>Seleccione una Jurisdiccion</option>
                     </select>
                   </div>
-                  <div class="form-group col-md-6">
-                    <label for="firstname"><span class="req">* </span> Nombre Equipo: </label>
-                    <input class="form-control" type="text" name="nomequipo" onkeyup="Validate(this)" required/>
+                  <div class="form-group col-xs-12 col-md-6">
+                    <?php
+                    //Condicion para que este disponible el nombre del equipo (solo futbol, basquet, volei)
+                      if ($deporte == 2 || $deporte == 4 || $deporte == 5) {
+                        ?>
+                        <label for="nomequipo"><span class="req">* </span> Nombre Equipo: </label>
+                        <input class="form-control" type="text" name="nomequipo" required/>
+                        <?php
+                      }
+                    ?>
                   </div>
                 </div>
 
                 <?php
-                  include('connect.php');
-
-                  //$stmt = $dbh->prepare("SELECT  FROM deporte");
-                  //$stmt->execute();
-            		  //$table = $stmt->fetchAll();
+                  if ($deporte == 3 && $sexo == 1 || $deporte == 3 && $sexo == 2 || $deporte == 3 && $sexo == 3) {
+                    $jugadores = 1;
+                  }
+                  for ($i=0; $i < $jugadores ; $i++) {
+                    ?>
+                    <div class="row">
+                      <div class="form-group col-md-2">
+                        <label for="dni"><span class="req">* </span> D.N.I.: </label>
+                        <input class="form-control" type="text" name="dni<?php echo $i ?>" required />
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="nombre"><span class="req">* </span> Nombre: </label>
+                        <input class="form-control" type="text" name="nombre<?php echo $i ?>" required />
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="apellido"><span class="req">* </span> Apellido: </label>
+                        <input class="form-control" type="text" name="apellido<?php echo $i ?>" required />
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="nacimiento"><span class="req">* </span> Nacimiento: </label>
+                        <input class="form-control" type="text" name="nacimiento<?php echo $i ?>" required />
+                      </div>
+                      <div class="form-check col-md-1">
+                        <label for="pasbec">Pas/Bec:</label>
+                        <input type="checkbox" class="form-check-input" id="pasbec">
+                      </div>
+                    </div>
+                    <?php
+                  }
                 ?>
-                <div class="row">
-                  <div class="form-group col-md-2">
-                    <label for="oficina"><span class="req">* </span> D.N.I.: </label>
-                    <input class="form-control" type="text" name="dni" value="">
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="firstname"><span class="req">* </span> Nombre: </label>
-                    <input class="form-control" type="text" name="nombre" required />
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="firstname"><span class="req">* </span> Apellido: </label>
-                    <input class="form-control" type="text" name="apellido" required />
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="firstname"><span class="req">* </span> Nacimiento: </label>
-                    <input class="form-control" type="text" name="apellido" required />
-                  </div>
-                </div>
 
                 <div class="form-group">
                     <input class="btn btn-success" type="submit" name="submit_reg" value="Register">

@@ -86,7 +86,7 @@
                                   foreach ($table4 as $row4) {
                                     //Intento de hacer el boton para ir al formulario de inscripcion a los deportes
                                     //en caso de tener una sola categoria (mixto) ajedrez,truco,loba
-                                    ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                    ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
                                       <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
                                   }
                               echo '</ul>
@@ -102,7 +102,7 @@
                                     $table4 = $stmt4->fetchAll();
                                     foreach ($table4 as $row4) {
                                       //en caso de tener dos categorias (hombre - mujer) futbol,volei,basquet
-                                      ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                      ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
                                         <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
                                     }
                                   echo '</ul>
@@ -117,7 +117,7 @@
                                       $table4 = $stmt4->fetchAll();
                                       foreach ($table4 as $row4) {
                                         //en caso de tener mas categorias (hombre - mujer - mixto - dobles) tenis de mesa
-                                        ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                        ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
                                           <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
                                       }
                                     echo '</ul>
@@ -142,7 +142,7 @@
                                         $stmt4->execute();
                                         $table4 = $stmt4->fetchAll();
                                         foreach ($table4 as $row4) {
-                                          ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>">
+                                          ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
                                             <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
                                         }
                                       echo '</ul>
