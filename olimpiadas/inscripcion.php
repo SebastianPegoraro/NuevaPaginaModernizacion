@@ -59,15 +59,15 @@
                     <div class="row">
                       <div class="form-group col-md-2">
                         <label for="dni"><span class="req">* </span> D.N.I.: </label>
-                        <input class="form-control" type="text" name="dni<?php echo $i ?>" required />
+                        <input class="form-control" type="text" id="dni" name="dni<?php echo $i ?>" required />
                       </div>
                       <div class="form-group col-md-3">
                         <label for="nombre"><span class="req">* </span> Nombre: </label>
-                        <input class="form-control" type="text" name="nombre<?php echo $i ?>" required />
+                        <input class="form-control" type="text" id="nombre" name="nombre<?php echo $i ?>" required />
                       </div>
                       <div class="form-group col-md-3">
                         <label for="apellido"><span class="req">* </span> Apellido: </label>
-                        <input class="form-control" type="text" name="apellido<?php echo $i ?>" required />
+                        <input class="form-control" type="text" id="apellido" name="apellido<?php echo $i ?>" required />
                       </div>
                       <div class="form-group col-md-3">
                         <label for="nacimiento"><span class="req">* </span> Nacimiento: </label>
@@ -75,13 +75,13 @@
                       </div>
                       <div class="form-check col-md-1">
                         <label for="pasbec">Pas/Bec:</label>
-                        <input type="checkbox" class="form-check-input" id="pasbec">
+                        <input type="checkbox" class="form-check-input" name="pasbec" id="pasbec">
                       </div>
                     </div>
                     <?php
                   }
                 ?>
-
+                <input type="hidden" name="jugadores" value="<?php echo $jugadores ?>">
                 <div class="form-group">
                     <input class="btn btn-success" type="submit" name="submit_reg" value="Register">
                 </div>
@@ -100,6 +100,7 @@
     <!-- Plugin JavaScript -->
     <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
+    <!-- Ajax para la lista de Jurisdicciones -->
     <script src="../js/ajax.js"></script>
 
     <script src="../js/inscripcion.js"></script>

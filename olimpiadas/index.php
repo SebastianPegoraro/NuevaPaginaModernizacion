@@ -69,12 +69,12 @@
     <header class="masthead">
       <div class="container">
         <video id="bgvid" playsinline autoplay muted loop>
-        <source src="../img/ACTO_COLOR_VERDE.webm" type="video/webm">
-        <source src="../img/ACTO_COLOR_VERDE.mp4" type="video/mp4">
+        <source src="../img/22.webm" type="video/webm">
+        <source src="../img/22.mp4" type="video/mp4">
         </video>
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->
-          <div class="intro-heading text-uppercase">Olimpíadas 2018!</div>
+          <div class="intro-heading text-uppercase">olimpíadas 2018!</div>
           <a id="btn" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#eventos"> Categorías </a>
         </div>
       </div>
