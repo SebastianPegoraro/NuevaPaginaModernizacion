@@ -56,22 +56,25 @@
                   }
                   for ($i=0; $i < $jugadores ; $i++) {
                     ?>
+					<!-- a cada elemento se le pone un valor (arbitrario) "data-orden" indicando el indice correspondiente
+					ademas, cada uno tiene su propio id en la forma "nombrecontrol"+"indice"
+					ademas, cada uno tiene una clase que refleja quien es -->
                     <div class="row">
                       <div class="form-group col-md-2">
                         <label for="dni"><span class="req">* </span> D.N.I.: </label>
-                        <input class="form-control" type="text" id="dni" name="dni<?php echo $i ?>" required />
+                        <input class="form-control dni" type="text" data-orden="<?php echo $i ?>"  id="dni<?php echo $i ?>" name="dni<?php echo $i ?>" required />
                       </div>
                       <div class="form-group col-md-3">
                         <label for="nombre"><span class="req">* </span> Nombre: </label>
-                        <input class="form-control" type="text" id="nombre" name="nombre<?php echo $i ?>" required />
+                        <input class="form-control nombre" type="text" data-orden="<?php echo $i ?>" id="nombre<?php echo $i ?>" name="nombre<?php echo $i ?>" required />
                       </div>
                       <div class="form-group col-md-3">
                         <label for="apellido"><span class="req">* </span> Apellido: </label>
-                        <input class="form-control" type="text" id="apellido" name="apellido<?php echo $i ?>" required />
+                        <input class="form-control apellido" type="text" data-orden="<?php echo $i ?>" id="apellido<?php echo $i ?>" name="apellido<?php echo $i ?>" required />
                       </div>
                       <div class="form-group col-md-3">
                         <label for="nacimiento"><span class="req">* </span> Nacimiento: </label>
-                        <input class="form-control" type="text" name="nacimiento<?php echo $i ?>" required />
+                        <input class="form-control nacimiento" type="text" data-orden="<?php echo $i ?>" id="nacimiento<?php echo $i ?>" name="nacimiento<?php echo $i ?>" required />
                       </div>
                       <div class="form-check col-md-1">
                         <label for="pasbec">Pas/Bec:</label>
