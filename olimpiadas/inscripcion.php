@@ -21,13 +21,19 @@
       $especialidad = $_REQUEST['especialidad'];
       $categoria = $_REQUEST['categoria'];
       $jugadores = $_REQUEST['jugadores'];
+
+      include 'connect.php';
+      $stmt = $dbh->prepare("SELECT id_combinacion FROM combinacion WHERE id_deporte=".$deporte." AND id_sexo=".$sexo." AND id_edad=".$categoria." AND id_especialidad=".$especialidad);
+      $stmt->execute();
+      $table = $stmt->fetchAll();
+      $combinacion = $table[0];
     ?>
 
     <section>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <form action="" method="post" id="fileForm" role="form">
+            <form action="guarda.php" method="post" id="fileForm" role="form">
               <fieldset><legend class="text-center"><h1>Valid information is required to register. <span class="req"><small> required *</small></span></h1></legend>
 
                 <div class="row">
@@ -85,6 +91,8 @@
                   }
                 ?>
                 <input type="hidden" name="jugadores" value="<?php echo $jugadores ?>">
+                <input type="hidden" name="combinacion" value="<?php echo $combinacion ?>">
+                <input type="hidden" name="deporte" value="<?php echo $deporte ?>">
                 <div class="form-group">
                     <input class="btn btn-success" type="submit" name="submit_reg" value="Register">
                 </div>
