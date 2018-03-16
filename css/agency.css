@@ -581,8 +581,8 @@ video {
 }
 
 .equipo {
-  width: 140px;
-  height: 180px;
+  width: 170px;
+  height: auto;
   border: 4px solid #fff;
 }
 

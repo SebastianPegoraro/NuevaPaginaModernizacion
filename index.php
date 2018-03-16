@@ -420,49 +420,50 @@
             <div class="MultiCarousel-inner">
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
-                  <p>Ariel</p>
+                  <img src="img/team/13.jpg" alt="" class="equipo">
+                  <p>Seba Pego</p>
+                  <p>Director</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
+                  <img src="img/team/12.jpg" alt="" class="equipo">
                   <p>Edward</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/3.png" alt="" class="equipo">
+                  <img src="img/team/11.jpg" alt="" class="equipo">
                   <p>Alphonse</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <img src="img/team/10.jpg" alt="" class="equipo">
                   <p>Alex</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <img src="img/team/9.jpg" alt="" class="equipo">
                   <p>Luis</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <img src="img/team/8.jpg" alt="" class="equipo">
                   <p>Armstrong</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <img src="img/team/7.jpg" alt="" class="equipo">
                   <p>Jack</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <img src="img/team/6.jpg" alt="" class="equipo">
                   <p>Sparrow</p>
                 </div>
               </div>

@@ -78,13 +78,17 @@
                         <label for="apellido"><span class="req">* </span> Apellido: </label>
                         <input class="form-control apellido" type="text" data-orden="<?php echo $i ?>" id="apellido<?php echo $i ?>" name="apellido<?php echo $i ?>" required />
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label for="nacimiento"><span class="req">* </span> Nacimiento: </label>
                         <input class="form-control nacimiento" type="text" data-orden="<?php echo $i ?>" id="nacimiento<?php echo $i ?>" name="nacimiento<?php echo $i ?>" required />
                       </div>
-                      <div class="form-check col-md-1">
+                      <div class="form-group col-md-1 text-center">
+                        <label for="adscripto">Adscripto:</label>
+                        <input type="checkbox" class="form-check-input" data-orden="<?php echo $i ?>" name="adscripto<?php echo $i ?>" id="adscripto<?php echo $i ?>">
+                      </div>
+                      <div class="form-check col-md-1 text-center">
                         <label for="pasbec">Pas/Bec:</label>
-                        <input type="checkbox" class="form-check-input" name="pasbec" id="pasbec">
+                        <input type="checkbox" class="form-check-input" data-orden="<?php echo $i ?>" name="pasbec<?php echo $i ?>" id="pasbec<?php echo $i ?>">
                       </div>
                     </div>
                     <?php
