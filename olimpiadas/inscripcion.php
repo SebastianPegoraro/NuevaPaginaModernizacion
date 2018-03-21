@@ -26,7 +26,7 @@
       $stmt = $dbh->prepare("SELECT id_combinacion FROM combinacion WHERE id_deporte=".$deporte." AND id_sexo=".$sexo." AND id_edad=".$categoria." AND id_especialidad=".$especialidad);
       $stmt->execute();
       $table = $stmt->fetchAll();
-      $combinacion = $table[0];
+      $combinacion = $table[0][0];
     ?>
 
     <section>

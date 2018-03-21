@@ -5,27 +5,42 @@
   $jurisdiccion = $_REQUEST['jurisdiccion'];
   $deporte = $_REQUEST['deporte'];
   $combinacion = $_REQUEST['combinacion'];
-  $nomequipo = $_REQUEST['nomequipo'];
 
   //Solo estos deportes tienen equipos limitados
   if ($deporte == 2 || $deporte == 4 || $deporte == 5 || $deporte == 5) {
+    $nomequipo = $_REQUEST['nomequipo'];
     //Consulta el numero de equipos que ya existen de esa jurisdiccion
     $stmt = $dbh->prepare("SELECT COUNT(DISTINCT persona.numequipo) FROM persona INNER JOIN inscripcion ON persona.id_persona = inscripcion.id_persona
                             WHERE inscripcion.id_combinacion = ".$combinacion." AND persona.denominacionjur = ".$jurisdiccion." GROUP BY numequipo");
     $stmt->execute();
     $lista = $stmt->fetchAll();
-    $numequipo = count($lista);
+    $numequipo = count($lista) + 1;
 
     for ($i=0; $i < $jugadores ; $i++) {
 
-      $nombre = $_REQUEST['apellido'+$i] + $_REQUEST['nombre'+$i];
-      $nacimiento = $_REQUEST['nacimiento'+$i];
-      $dni = $_REQUEST['dni'+$i];
-      $pasbec = $_REQUEST['pasbec'+$i];
-      $abscripto = $_REQUEST['abscripto'+$i];
+      $nombre = $_REQUEST['apellido'.$i].",".$_REQUEST['nombre'.$i];
+      $nacimiento = $_REQUEST['nacimiento'.$i];
+      $dni = $_REQUEST['dni'.$i];
+      if (isset($_REQUEST['pasbec'.$i])) {
+        $pasbec = 1;
+      } else {
+        $pasbec = 0;
+      }
+      if (isset($_REQUEST['abscripto'.$i])) {
+        $abscripto = 1;
+      } else {
+        $abscripto = 0;
+      }
       //Agregamos la persona
       $stmt2 = $dbh->prepare("INSERT INTO persona(nombre, edad, dni, denominacionjur, numequipo, pasbec, abscripto)
                               VALUES (".$nombre.",".$nacimiento.",".$dni.",".$jurisdiccion.",".$numequipo.",".$pasbec.",".$abscripto.") ");
+      $stmt2->bindParam(1, $nombre);
+      $stmt2->bindPAram(2, $age);
+      $stmt2->bindPAram(3, $dni);
+      $stmt2->bindPAram(4, $jurisdiccion);
+      $stmt2->bindPAram(5, $numequipo);
+      $stmt2->bindPAram(6, $pasbec);
+      $stmt2->bindPAram(7, $abscripto);
       $stmt2->execute();
       //Buscamos el id de la persona que acabamos de agregar
       $stmt3 = $dbh->prepare("SELECT id_persona FROM persona WHERE dni = ".$dni." AND numequipo = ".$numequipo);
@@ -41,22 +56,48 @@
   } else {
     for ($i=0; $i < $jugadores ; $i++) {
 
-      $nombre = $_REQUEST['apellido'+$i] + $_REQUEST['nombre'+$i];
-      $nacimiento = $_REQUEST['nacimiento'+$i];
-      $dni = $_REQUEST['dni'+$i];
-      $pasbec = $_REQUEST['pasbec'+$i];
-      $abscripto = $_REQUEST['abscripto'+$i];
+      $nombre = $_REQUEST['apellido'.$i].",".$_REQUEST['nombre'.$i];
+      $nacimiento = $_REQUEST['nacimiento'.$i];
+      $dni = $_REQUEST['dni'.$i];
+      if (isset($_REQUEST['pasbec'.$i])) {
+        $pasbec = 1;
+      } else {
+        $pasbec = 0;
+      }
+      if (isset($_REQUEST['abscripto'.$i])) {
+        $abscripto = 1;
+      } else {
+        $abscripto = 0;
+      }
+      //Calculamos la edad de la persona
+      //explode the date to get month, day and year
+      $nacimiento = explode("-", $nacimiento);
+      //get age from date or birthdate
+      $age = (date("md", date("U", mktime(0, 0, 0, $nacimiento[1], $nacimiento[0], $nacimiento[2]))) > date("md")
+        ? ((date("Y") - $nacimiento[2]) - 1)
+        : (date("Y") - $nacimiento[2]));
+
       //Agregamos la persona
       $stmt2 = $dbh->prepare("INSERT INTO persona(nombre, edad, dni, denominacionjur, pasbec, abscripto)
-                              VALUES (".$nombre.",".$nacimiento.",".$dni.",".$jurisdiccion.",".$pasbec.",".$abscripto.") ");
+                              VALUES (?,?,?,?,?,?) ");
+      $stmt2->bindParam(1, $nombre);
+      $stmt2->bindPAram(2, $age);
+      $stmt2->bindPAram(3, $dni);
+      $stmt2->bindPAram(4, $jurisdiccion);
+      $stmt2->bindPAram(5, $pasbec);
+      $stmt2->bindPAram(6, $abscripto);
       $stmt2->execute();
       //Buscamos el id de la persona que acabamos de agregar
-      $stmt3 = $dbh->prepare("SELECT id_persona FROM persona WHERE dni = ".$dni." AND numequipo = ".$numequipo);
+      $stmt3 = $dbh->prepare("SELECT id_persona FROM persona WHERE dni = ".$dni);
       $stmt3->execute();
       $id_persona = $stmt3->fetchAll();
+      $persona = $id_persona[0][0];
       //Agregamos la combinacion para formar al equipo
-      $stmt4 = $dbh->prepare("INSERT INTO inscripcion(id_persona, id_combinacion, fecha_inscripcion, nomequipo)
-                              VALUES (".$id_persona.",".$combinacion.",".date("Y-m-d").",".$nomequipo.") ");
+      $stmt4 = $dbh->prepare("INSERT INTO inscripcion(id_persona, id_combinacion, fecha_inscripcion)
+                              VALUES (?,?,?) ");
+      $stmt4->bindParam(1, $persona);
+      $stmt4->bindPAram(2, $combinacion);
+      $stmt4->bindPAram(3, date("Y-m-d"));
       $stmt4->execute();
     }
     //Una vez terminado, redireccionamos a otra pagina
