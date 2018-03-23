@@ -65,22 +65,84 @@
       </div>
     </nav>
 
+    <?php
+      include 'connect.php';
+
+      $id_deporte = $_REQUEST['id_deporte'];
+
+      $stmt = $dbh->prepare("SELECT nombre FROM deporte WHERE id_deporte = ".$id_deporte);
+      $stmt->execute();
+      $table = $stmt->fetchAll();
+    ?>
+
     <!-- Header -->
     <header class="masthead">
       <div class="container">
-        <video id="bgvid" playsinline autoplay muted loop>
-          <source src="../img/22.webm" type="video/webm">
-          <source src="../img/22.mp4" type="video/mp4">
-        </video>
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->
-          <div class="intro-heading text-uppercase">olimpíadas 2018!</div>
-          <a id="btn" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#olimpiadas"> Categorías </a>
+          <div class="intro-heading text-uppercase">Listado de <?php echo $table[0][0] ?></div>
         </div>
       </div>
     </header>
 
-    <?php include('olimpi.php') ?>
+    <!-- Listado -->
+    <section>
+      <div class="container">
+        <div class="row">
+        <?php
+          if ($id_deporte == 1) {
+            $stmt1 = $dbh->prepare("SELECT especialidad.nombre, especialidad.id_especialidad FROM especialidad INNER JOIN combinacion ON combinacion.id_especialidad = especialidad.id_especialidad
+                                    WHERE combinacion.id_deporte = ".$id_deporte." GROUP BY especialidad.nombre");
+            $stmt1->execute();
+            $table1 = $stmt1->fetchAll();
+            foreach ($table1 as $row1) {
+              ?>
+              <div class="col-md-6">
+                <table class="table table-striped table-dark">
+                  <h1><?php echo $row1[0] ?></h1>
+                  <?php
+                  $stmt2 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad
+                                          WHERE combinacion.id_deporte = ".$id_deporte." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                  $stmt2->execute();
+                  $table2 = $stmt2->fetchAll();
+                  ?>
+                  <thead>
+                    <tr>
+                      <th scope="col"> </th>
+                      <th scope="col">Apellido</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Edad</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <?php
+            }
+          }
+        ?>
+        </div>
+      </div>
+    </section>
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>

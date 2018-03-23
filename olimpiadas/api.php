@@ -21,7 +21,12 @@
       $stmt->execute();
   		$table = $stmt->fetchAll();
   		foreach($table as $row){
-        $apeynom = explode(',', $row["apeynom"]);
+        $pos = strrpos($row["apeynom"], ',');
+        if ($pos === false) {
+          $apeynom = explode(' ', $row["apeynom"]);
+        } else {
+          $apeynom = explode(',', $row["apeynom"]);
+        }
 				//aca armamos cada "linea" del json
 				$output_array[] = array( 'apellido' => $apeynom[0], 'nombre' => $apeynom[1] );
 			}

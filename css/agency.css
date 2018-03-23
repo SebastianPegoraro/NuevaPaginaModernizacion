@@ -532,13 +532,22 @@ ul.social-buttons {
       background-color: #fed136; }
 
 /* My own Code */
+/* Index */
+section#eventos {
+  background-color: #fff;
+}
+
 section#premio{
   /*background-color: rgba(35, 164, 243, 0.2);*/
-  background-color: rgba(38, 128, 204, 0.15);
+  background-color: #fff;
 }
 
 section#acto{
-  background-color: rgba(88, 121, 225, 0.15);
+  background-color: #fff;
+}
+
+section#logos{
+  background-color: #fff;
 }
 
 /*Olimpiadas*/

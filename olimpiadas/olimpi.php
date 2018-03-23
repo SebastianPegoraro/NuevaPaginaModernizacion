@@ -154,8 +154,16 @@
                         }
                       }
                     echo '</div>
+                  </div>';?>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-6 offset-md-3">
+                        <a href="../olimpiadas/listado.php?id_deporte=<?php echo $row['id_deporte'] ?>">
+                          <button class="btn btn-warning btn-block" type="button"><i class="fa fa-pencil"></i> Ver participantes hasta el momento </button></a>
+                      </div>
+                    </div>
                   </div>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <?php echo '<button class="btn btn-primary" data-dismiss="modal" type="button">
                     <i class="fa fa-times"></i>
                     Cerrar</button>
                 </div>

@@ -677,7 +677,7 @@
     </section>
 
     <!-- Logos -->
-    <section class="py-5">
+    <section class="py-5" id="logos">
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-sm-6">
