@@ -67,9 +67,9 @@
     <!-- Header -->
     <header class="masthead">
       <div class="container">
-        <video id="bgvid" playsinline autoplay muted loop>
-        <source src="./img/portada.webm" type="video/webm">
-        <source src="./img/portada.mp4" type="video/mp4">
+        <video id="bgvid" playsinline autoplay muted loop class="video">
+          <source src="./img/portada.webm" type="video/webm">
+          <source src="./img/portada.mp4" type="video/mp4">
         </video>
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->
@@ -121,8 +121,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Olimpíadas</h2>
-            <h3 class="section-subheading text-muted">Estas son las disciplinas en las que pueden inscribirse!</h3>
+            <h2 class="section-heading text-uppercase white-leter">Olimpíadas</h2>
+            <h3 class="section-subheading text-muted white-leter">Estas son las disciplinas en las que pueden inscribirse!</h3>
           </div>
         </div>
         <div class="row">
@@ -308,31 +308,31 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Acto</h2>
-            <h3 class="section-subheading text-muted">Esto premiamos en el Acto al Empleado Público</h3>
+            <h2 class="section-heading text-uppercase white-leter">Acto</h2>
+            <h3 class="section-subheading white">Esto premiamos en el Acto al Empleado Público</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="img/acto/25.jpg" alt="">
-              <h4>25 Años de Servicios</h4>
-              <p class="text-muted">Agentes públicos con 25 años de servicios.</p>
+              <h4 class="white-leter">25 Años de Servicios</h4>
+              <p class="white">Agentes públicos con 25 años de servicios.</p>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="team-member">
               <img class="mx-auto rounded-circle" src="img/acto/jubi.jpg" alt="">
-              <h4>Jubilados</h4>
-              <p class="text-muted">Agentes públicos que estén a punto de jubilarse.</p>
+              <h4 class="white-leter">Jubilados</h4>
+              <p class="white">Agentes públicos que estén a punto de jubilarse.</p>
             </div>
           </div>
         </div>
-        <div class="row">
+        <!--<div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">Si este año entras en una de las categorias, no te podes perder el Acto en el que te homenajeamos.-</p>
+            <p class="large white">Si este año entras en una de las categorias, no te podes perder el Acto en el que te homenajeamos.-</p>
           </div>
-        </div>
+        </div>-->
       </div>
     </section>
 
@@ -471,54 +471,6 @@
                   <p>Sparrow</p>
                 </div>
               </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
-                  <p>Bill</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/3.png" alt="" class="equipo">
-                  <p>Gates</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/4.png" alt="" class="equipo">
-                  <p>Pepita</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/5.png" alt="" class="equipo">
-                  <p>Pistolera</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/6.png" alt="" class="equipo">
-                  <p>Rod</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/7.png" alt="" class="equipo">
-                  <p>Flanders</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
-                  <p>Apu</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
-                  <p>Ble</p>
-                </div>
-              </div>
             </div>
             <button class="btn btn-primary leftLst"><</button>
             <button class="btn btn-primary rightLst">></button>
@@ -530,98 +482,63 @@
             <div class="MultiCarousel-inner">
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
-                  <p>Ariel</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
-                  <p>Edward</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/3.png" alt="" class="equipo">
-                  <p>Alphonse</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/4.png" alt="" class="equipo">
+                  <img src="img/team/10.jpg" alt="" class="equipo">
                   <p>Alex</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/5.png" alt="" class="equipo">
+                  <img src="img/team/9.jpg" alt="" class="equipo">
                   <p>Luis</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/6.png" alt="" class="equipo">
+                  <img src="img/team/8.jpg" alt="" class="equipo">
                   <p>Armstrong</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/7.png" alt="" class="equipo">
+                  <img src="img/team/7.jpg" alt="" class="equipo">
                   <p>Jack</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
+                  <img src="img/team/6.jpg" alt="" class="equipo">
                   <p>Sparrow</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
-                  <p>Bill</p>
+                  <img src="img/team/1.jpg" alt="" class="equipo">
+                  <p>Something</p>
+                  <p>Director</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/3.png" alt="" class="equipo">
-                  <p>Gates</p>
+                  <img src="img/team/12.jpg" alt="" class="equipo">
+                  <p>Edward</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/4.png" alt="" class="equipo">
-                  <p>Pepita</p>
+                  <img src="img/team/11.jpg" alt="" class="equipo">
+                  <p>Alphonse</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/5.png" alt="" class="equipo">
-                  <p>Pistolera</p>
+                  <img src="img/team/10.jpg" alt="" class="equipo">
+                  <p>Alex</p>
                 </div>
               </div>
               <div class="item">
                 <div class="pad15">
-                  <img src="img/premio/6.png" alt="" class="equipo">
-                  <p>Rod</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/7.png" alt="" class="equipo">
-                  <p>Flanders</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/1.png" alt="" class="equipo">
-                  <p>Apu</p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="pad15">
-                  <img src="img/premio/2.png" alt="" class="equipo">
-                  <p>Ble</p>
+                  <img src="img/team/9.jpg" alt="" class="equipo">
+                  <p>Luis</p>
                 </div>
               </div>
             </div>

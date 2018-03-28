@@ -91,6 +91,7 @@
         <div class="row">
         <?php
           if ($id_deporte == 1) {
+            //En caso de ser maraton, se traen las distintas especialidades
             $stmt1 = $dbh->prepare("SELECT especialidad.nombre, especialidad.id_especialidad FROM especialidad INNER JOIN combinacion ON combinacion.id_especialidad = especialidad.id_especialidad
                                     WHERE combinacion.id_deporte = ".$id_deporte." GROUP BY especialidad.nombre");
             $stmt1->execute();
@@ -98,43 +99,60 @@
             foreach ($table1 as $row1) {
               ?>
               <div class="col-md-6">
-                <table class="table table-striped table-dark">
-                  <h1><?php echo $row1[0] ?></h1>
+                <h1><?php echo $row1[0] ?></h1>
                   <?php
+                  //Traemos las distintas categorias para maraton en este caso
                   $stmt2 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad
                                           WHERE combinacion.id_deporte = ".$id_deporte." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
                   $stmt2->execute();
                   $table2 = $stmt2->fetchAll();
-                  ?>
-                  <thead>
-                    <tr>
-                      <th scope="col"> </th>
-                      <th scope="col">Apellido</th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Edad</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                </table>
+                  foreach ($table2 as $row2) {
+                    ?>
+                      <h2><?php echo $row2[0] ?></h2>
+                      <?php
+                        //Traemos las distintas Jurisdicciones que se inscribieron
+                        $stmt3 = $dbh->prepare("SELECT denominacionjur FROM planta
+                                                WHERE jurisdiccion IN (SELECT persona.denominacionjur FROM persona INNER JOIN inscripcion ON persona.id_persona = inscripcion.id_persona
+                                                INNER JOIN combinacion ON combinacion.id_combinacion = inscripcion.id_combinacion WHERE combinacion.id_deporte = ".$id_deporte." GROUP BY persona.denominacionjur )
+                                                GROUP BY denominacionjur ORDER BY jurisdiccion");
+                        $stmt3->execute();
+                        $table3 = $stmt3->fetchAll();
+                        foreach ($table3 as $row3) {
+                          ?>
+                          <table class="table table-striped table-dark">
+                            <h5><?php echo $row3[0] ?></h5>
+                            <thead>
+                              <tr>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Edad</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <?php
+                        }
+                }
+                ?>
               </div>
               <?php
             }
