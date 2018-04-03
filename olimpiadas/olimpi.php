@@ -3,8 +3,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">Olimpíadas</h2>
-        <h3 class="section-subheading text-muted">Estas son las disciplinas en las que pueden inscribirse!</h3>
+        <h2 class="section-heading text-uppercase white-leter">Olimpíadas</h2>
+        <h3 class="section-subheading white">Estas son las disciplinas en las que pueden inscribirse!</h3>
       </div>
     </div>
     <div class="row">

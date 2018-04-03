@@ -24,7 +24,9 @@
     <link href="css/agency.css" rel="stylesheet">
     <link href="css/font.css" rel="stylesheet" type="text/css">
     <link href="css/test.css" rel="stylesheet" type="text/css">
+    <!-- Para el Carousel -->
     <link href="css/carousel.css" rel="stylesheet" type="text/css">
+    <link href="css/video.css" rel="stylesheet" type="text/css">
 
   </head>
 
@@ -66,15 +68,18 @@
 
     <!-- Header -->
     <header class="masthead">
-      <div class="container">
-        <video id="bgvid" playsinline autoplay muted loop class="video">
-          <source src="./img/portada.webm" type="video/webm">
-          <source src="./img/portada.mp4" type="video/mp4">
-        </video>
-        <div class="intro-text">
-          <!--<div class="intro-lead-in">15 Enero 2017</div>-->
-          <div class="intro-heading text-uppercase">Empleado Público 2018</div>
-          <a id="btn" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#eventos"> Consultar Eventos! </a>
+      <div class="homepage-hero-module">
+        <div class="video-container">
+          <div class="intro-text title-container">
+            <!--<div class="intro-lead-in">15 Enero 2017</div>-->
+            <div class="intro-heading text-uppercase">Empleado Público 2018</div>
+            <a id="btn" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#eventos"> Consultar Eventos! </a>
+          </div>
+          <div class="filter"></div>
+          <video id="bgvid" playsinline autoplay muted loop class="video">
+            <source src="./img/portada.webm" type="video/webm">
+            <source src="./img/portada.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </header>
@@ -122,7 +127,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase white-leter">Olimpíadas</h2>
-            <h3 class="section-subheading text-muted white-leter">Estas son las disciplinas en las que pueden inscribirse!</h3>
+            <h3 class="section-subheading white">Estas son las disciplinas en las que pueden inscribirse!</h3>
           </div>
         </div>
         <div class="row">
@@ -805,6 +810,7 @@
     <!-- Custom scripts for this template -->
     <script src="js/agency.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/video.js"></script>
 
   </body>
 

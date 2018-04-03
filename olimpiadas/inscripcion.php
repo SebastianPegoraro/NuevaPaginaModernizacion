@@ -13,6 +13,8 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <link href="../css/inscripcion.css" rel="stylesheet" type="text/css">
+	  <!-- JQueryUI para elegir fecha -->
+    <link rel="stylesheet" href="../vendor/jquery-ui/jquery-ui.css">
   </head>
   <body>
     <?php
@@ -119,14 +121,18 @@
     <script src="../js/ajax.js"></script>
 
     <script src="../js/inscripcion.js"></script>
-	  <!-- ToDo: descargar el JS y CSS de JQueryUI y usarlos localmente -->
-	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	  <!-- JQueryUI para elegir fecha -->
+	  <script src="../vendor/jquery-ui/jquery-ui.js"></script>
 	  <script src="../js/locales.js"></script>
- <script>
-  $( function() {
-    $( ".nacimiento" ).datepicker({ dateFormat: 'dd-mm-yy',firstDay: 7 });
-  } );
-  </script>
+    <script>
+      $( function() {
+        $( ".nacimiento" ).datepicker({
+          dateFormat: 'dd-mm-yy',
+          firstDay: 7,
+          changeMonth: true,
+          changeYear: true,
+          yearRange: "-100:-17" });
+      } );
+    </script>
   </body>
 </html>
