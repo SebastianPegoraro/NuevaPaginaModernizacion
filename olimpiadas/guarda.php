@@ -10,22 +10,28 @@
   if ($deporte == 2 || $deporte == 4 || $deporte == 5 || $deporte == 7 || $combinacion == 79 || $combinacion == 80 || $combinacion == 81) {
     $nomequipo = $_REQUEST['nomequipo'];
     //Consulta el numero de equipos que ya existen de esa jurisdiccion
-    $stmt = $dbh->prepare("SELECT COUNT(DISTINCT persona.numequipo) FROM persona INNER JOIN inscripcion ON persona.id_persona = inscripcion.id_persona
-                            WHERE inscripcion.id_combinacion = ".$combinacion." AND persona.denominacionjur = ".$jurisdiccion." GROUP BY numequipo");
+    $stmt = $dbh->prepare("SELECT COUNT(DISTINCT persona.numequipo)
+                            FROM persona
+                            INNER JOIN inscripcion ON persona.id_persona = inscripcion.id_persona
+                            INNER JOIN combinacion ON inscripcion.id_combinacion = combinacion.id_combinacion
+                            WHERE combinacion.id_deporte = ".$deporte." AND persona.denominacionjur = ".$jurisdiccion."
+                            GROUP BY numequipo");
     $stmt->execute();
-    $lista = $stmt->fetchAll();
-    $numequipo = count($lista) + 1;
+    $numequipo = $stmt->rowCount() + 1;
     //Se verifica que la cantidad de equipos no sobrepase el limite
-    if ($deporte == 2 && $numequipo > 6) {
+    if ($numequipo > 1) {
+      header("Location: error.hmtl");
+    }
+    if ($deporte == "2" && $numequipo > 6) {
       header("Location: error.php");
     }
-    if ($deporte == 4 && $numequipo > 2) {
+    if ($deporte == "4" && $numequipo > 2) {
       header("Location: error.php");
     }
-    if ($deporte == 5 && $numequipo > 2) {
+    if ($deporte == "5" and $numequipo > 2) {
       header("Location: error.php");
     }
-    if ($deporte == 7 && $numequipo > 3) {
+    if ($deporte == "7" && $numequipo > 3) {
       header("Location: error.php");
     }
 
@@ -39,10 +45,10 @@
       } else {
         $pasbec = 0;
       }
-      if (isset($_REQUEST['abscripto'.$i])) {
-        $abscripto = 1;
+      if (isset($_REQUEST['adscripto'.$i])) {
+        $adscripto = 1;
       } else {
-        $abscripto = 0;
+        $adscripto = 0;
       }
 
       //Calculamos la edad de la persona
@@ -54,7 +60,7 @@
         : (date("Y") - $nacimiento[2]));
 
       //Agregamos la persona
-      $stmt2 = $dbh->prepare("INSERT INTO persona(nombre, edad, dni, denominacionjur, numequipo, pasbec, abscripto)
+      $stmt2 = $dbh->prepare("INSERT INTO persona(nombre, edad, dni, denominacionjur, numequipo, pasbec, adscripto)
                               VALUES (?,?,?,?,?,?,?) ");
       $stmt2->bindParam(1, $nombre);
       $stmt2->bindPAram(2, $age);
@@ -62,7 +68,7 @@
       $stmt2->bindPAram(4, $jurisdiccion);
       $stmt2->bindPAram(5, $numequipo);
       $stmt2->bindPAram(6, $pasbec);
-      $stmt2->bindPAram(7, $abscripto);
+      $stmt2->bindPAram(7, $adscripto);
       $stmt2->execute();
       //Buscamos el id de la persona que acabamos de agregar
       $stmt3 = $dbh->prepare("SELECT id_persona FROM persona WHERE dni = ".$dni." AND numequipo = ".$numequipo);
@@ -91,10 +97,10 @@
       } else {
         $pasbec = 0;
       }
-      if (isset($_REQUEST['abscripto'.$i])) {
-        $abscripto = 1;
+      if (isset($_REQUEST['adscripto'.$i])) {
+        $adscripto = 1;
       } else {
-        $abscripto = 0;
+        $adscripto = 0;
       }
 
       //Calculamos la edad de la persona
@@ -106,14 +112,14 @@
         : (date("Y") - $nacimiento[2]));
 
       //Agregamos la persona
-      $stmt2 = $dbh->prepare("INSERT INTO persona(nombre, edad, dni, denominacionjur, pasbec, abscripto)
+      $stmt2 = $dbh->prepare("INSERT INTO persona(nombre, edad, dni, denominacionjur, pasbec, adscripto)
                               VALUES (?,?,?,?,?,?) ");
       $stmt2->bindParam(1, $nombre);
       $stmt2->bindPAram(2, $age);
       $stmt2->bindPAram(3, $dni);
       $stmt2->bindPAram(4, $jurisdiccion);
       $stmt2->bindPAram(5, $pasbec);
-      $stmt2->bindPAram(6, $abscripto);
+      $stmt2->bindPAram(6, $adscripto);
       $stmt2->execute();
       //Buscamos el id de la persona que acabamos de agregar
       $stmt3 = $dbh->prepare("SELECT id_persona FROM persona WHERE dni = ".$dni);
