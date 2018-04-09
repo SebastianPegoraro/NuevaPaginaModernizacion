@@ -8,7 +8,11 @@
 
   //Solo estos deportes tienen equipos limitados
   if ($deporte == 2 || $deporte == 4 || $deporte == 5 || $deporte == 7 || $combinacion == 79 || $combinacion == 80 || $combinacion == 81) {
-    $nomequipo = $_REQUEST['nomequipo'];
+    if ($combinacion == 79 || $combinacion == 80 || $combinacion == 81) {
+      $nomequipo = null;
+    } else {
+      $nomequipo = $_REQUEST['nomequipo'];
+    }
     //Consulta el numero de equipos que ya existen de esa jurisdiccion
     $stmt = $dbh->prepare("SELECT COUNT(DISTINCT persona.numequipo)
                             FROM persona
@@ -19,20 +23,21 @@
     $stmt->execute();
     $numequipo = $stmt->rowCount() + 1;
     //Se verifica que la cantidad de equipos no sobrepase el limite
-    if ($numequipo > 1) {
-      header("Location: error.hmtl");
+    if ($deporte == 2 && $numequipo > 6) {
+      header("Location: error.php?deporte=2");
+      exit;
     }
-    if ($deporte == "2" && $numequipo > 6) {
-      header("Location: error.php");
+    if ($deporte == 4 && $numequipo > 2) {
+      header("Location: error.php?deporte=4");
+      exit;
     }
-    if ($deporte == "4" && $numequipo > 2) {
-      header("Location: error.php");
+    if ($deporte == 5 && $numequipo > 2) {
+      header("Location: error.php?deporte=5");
+      exit;
     }
-    if ($deporte == "5" and $numequipo > 2) {
-      header("Location: error.php");
-    }
-    if ($deporte == "7" && $numequipo > 3) {
-      header("Location: error.php");
+    if ($deporte == 7 && $numequipo > 3) {
+      header("Location: error.php?deporte=7");
+      exit;
     }
 
     for ($i=0; $i < $jugadores ; $i++) {
@@ -61,31 +66,18 @@
 
       //Agregamos la persona
       $stmt2 = $dbh->prepare("INSERT INTO persona(nombre, edad, dni, denominacionjur, numequipo, pasbec, adscripto)
-                              VALUES (?,?,?,?,?,?,?) ");
-      $stmt2->bindParam(1, $nombre);
-      $stmt2->bindPAram(2, $age);
-      $stmt2->bindPAram(3, $dni);
-      $stmt2->bindPAram(4, $jurisdiccion);
-      $stmt2->bindPAram(5, $numequipo);
-      $stmt2->bindPAram(6, $pasbec);
-      $stmt2->bindPAram(7, $adscripto);
+                              VALUES ('".$nombre."',".$age.",".$dni.",".$jurisdiccion.",".$numequipo.",".$pasbec.",".$adscripto.") ");
       $stmt2->execute();
       //Buscamos el id de la persona que acabamos de agregar
-      $stmt3 = $dbh->prepare("SELECT id_persona FROM persona WHERE dni = ".$dni." AND numequipo = ".$numequipo);
-      $stmt3->execute();
-      $id_persona = $stmt3->fetchAll();
-      $persona = $id_persona[0][0];
+      $persona = $dbh->lastInsertId();
       //Agregamos la combinacion para formar al equipo
       $stmt4 = $dbh->prepare("INSERT INTO inscripcion(id_persona, id_combinacion, fecha_inscripcion, nomequipo)
-                              VALUES (?,?,?,?) ");
-      $stmt4->bindParam(1, $persona);
-      $stmt4->bindPAram(2, $combinacion);
-      $stmt4->bindPAram(3, date("Y-m-d"));
-      $stmt4->bindPAram(4, $nomequipo);
+                              VALUES (".$persona.",".$combinacion.",'".date("Y-m-d")."','".$nomequipo."') ");
       $stmt4->execute();
     }
     //Una vez terminado, redireccionamos a otra pagina
     header("Location: guardado.html");
+    exit;
   } else {
     for ($i=0; $i < $jugadores ; $i++) {
 
@@ -136,6 +128,7 @@
     }
     //Una vez terminado, redireccionamos a otra pagina
     header("Location: guardado.html");
+    exit;
   }
 
 ?>
