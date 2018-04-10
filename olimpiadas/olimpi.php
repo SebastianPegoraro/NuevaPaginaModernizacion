@@ -105,12 +105,12 @@
                                       if ($row4['id_edad'] == 7 && $row['id_deporte'] == 2 && $row3['id_sexo'] == 2) {
                                         ?>
                                         <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
-                                          <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> Libre </button></a></li>
+                                          <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> LibreA </button></a></li>
                                         <?php
                                       } else {
                                         ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
                                           <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
-                                      }                                      
+                                      }
                                     }
                                   echo '</ul>
                                 </div>';

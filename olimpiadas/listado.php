@@ -70,13 +70,13 @@
 
       $id_deporte = $_REQUEST['id_deporte'];
 
-      $stmt = $dbh->prepare("SELECT nombre FROM deporte WHERE id_deporte = ".$id_deporte);
+      $stmt = $dbh->prepare("SELECT nombre, imagen FROM deporte WHERE id_deporte = ".$id_deporte);
       $stmt->execute();
       $table = $stmt->fetchAll();
     ?>
 
     <!-- Header -->
-    <header class="masthead">
+    <header class="headolim" style="background-image: url('<?php echo $table[0][1] ?>')">
       <div class="container">
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->
@@ -179,6 +179,8 @@
               </div>
               <?php
             }
+          } else {
+
           }
         ?>
         </div>
