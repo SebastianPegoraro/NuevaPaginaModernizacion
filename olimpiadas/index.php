@@ -75,10 +75,23 @@
         <div class="intro-text">
           <!--<div class="intro-lead-in">15 Enero 2017</div>-->
           <div class="intro-heading text-uppercase">olimpíadas 2018!</div>
-          <a id="btn" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#olimpiadas"> Categorías </a>
         </div>
       </div>
     </header>
+
+    <?php
+      if (isset($_REQUEST['save'])) {
+        $save = $_REQUEST['save'];
+        if ($save == "0") {
+          ?>
+          <div class="alert alert-success text-center col-md-2 offset-md-5" role="alert">
+          Guardado correctamente!
+          </div>
+          <?php
+        }
+      }
+
+     ?>
 
     <?php include('olimpi.php') ?>
 
@@ -95,6 +108,10 @@
 
     <!-- Custom scripts for this template -->
     <script src="../js/agency.js"></script>
+
+    <script type="text/javascript">
+
+    </script>
 
   </body>
 

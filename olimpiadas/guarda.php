@@ -76,7 +76,7 @@
       $stmt4->execute();
     }
     //Una vez terminado, redireccionamos a otra pagina
-    header("Location: guardado.html");
+    header("Location: index.php?save=0");
     exit;
   } else {
     for ($i=0; $i < $jugadores ; $i++) {
@@ -105,29 +105,17 @@
 
       //Agregamos la persona
       $stmt2 = $dbh->prepare("INSERT INTO persona(nombre, edad, dni, denominacionjur, pasbec, adscripto)
-                              VALUES (?,?,?,?,?,?) ");
-      $stmt2->bindParam(1, $nombre);
-      $stmt2->bindPAram(2, $age);
-      $stmt2->bindPAram(3, $dni);
-      $stmt2->bindPAram(4, $jurisdiccion);
-      $stmt2->bindPAram(5, $pasbec);
-      $stmt2->bindPAram(6, $adscripto);
+                              VALUES ('".$nombre."',".$age.",".$dni.",".$jurisdiccion.",".$pasbec.",".$adscripto.") ");
       $stmt2->execute();
       //Buscamos el id de la persona que acabamos de agregar
-      $stmt3 = $dbh->prepare("SELECT id_persona FROM persona WHERE dni = ".$dni);
-      $stmt3->execute();
-      $id_persona = $stmt3->fetchAll();
-      $persona = $id_persona[0][0];
+      $persona = $dbh->lastInsertId();
       //Agregamos la combinacion para formar al equipo
       $stmt4 = $dbh->prepare("INSERT INTO inscripcion(id_persona, id_combinacion, fecha_inscripcion)
-                              VALUES (?,?,?) ");
-      $stmt4->bindParam(1, $persona);
-      $stmt4->bindPAram(2, $combinacion);
-      $stmt4->bindPAram(3, date("Y-m-d"));
+                              VALUES (".$persona.",".$combinacion.",'".date("Y-m-d")."') ");
       $stmt4->execute();
     }
     //Una vez terminado, redireccionamos a otra pagina
-    header("Location: guardado.html");
+    header("Location: index.php?save=0");
     exit;
   }
 
