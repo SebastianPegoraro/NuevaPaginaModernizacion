@@ -24,8 +24,8 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/agency.css" rel="stylesheet">
-
-
+    <!-- Para el Video -->
+    <link href="../css/video.css" rel="stylesheet" type="text/css">
 
   </head>
 
@@ -67,14 +67,17 @@
 
     <!-- Header -->
     <header class="masthead">
-      <div class="container">
-        <video id="bgvid" playsinline autoplay muted loop>
-          <source src="../img/22.webm" type="video/webm">
-          <source src="../img/22.mp4" type="video/mp4">
-        </video>
-        <div class="intro-text">
-          <!--<div class="intro-lead-in">15 Enero 2017</div>-->
-          <div class="intro-heading text-uppercase">olimpíadas 2018!</div>
+      <div class="homepage-hero-module">
+        <div class="video-container">
+          <div class="intro-text title-container">
+            <!--<div class="intro-lead-in">15 Enero 2017</div>-->
+            <div class="intro-heading text-uppercase"> olimpiadas 2018! </div>
+          </div>
+          <div class="filter"></div>
+          <video id="bgvid" playsinline autoplay muted loop>
+            <source src="../img/22.webm" type="video/webm">
+            <source src="../img/22.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </header>
@@ -109,9 +112,8 @@
     <!-- Custom scripts for this template -->
     <script src="../js/agency.js"></script>
 
-    <script type="text/javascript">
-
-    </script>
+    <!-- Para el Video -->
+    <script src="../js/video.js"></script>
 
   </body>
 

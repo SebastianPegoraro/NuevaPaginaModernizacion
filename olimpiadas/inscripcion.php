@@ -100,7 +100,7 @@
                 <input type="hidden" name="combinacion" value="<?php echo $combinacion ?>">
                 <input type="hidden" name="deporte" value="<?php echo $deporte ?>">
                 <div class="form-group">
-                    <input class="btn btn-success" type="submit" name="submit_reg" value="Register">
+                    <input class="btn btn-success" type="submit" name="submit_reg" value="Registrarse!">
                 </div>
 
               </fieldset>

@@ -74,7 +74,7 @@
                           $stmt3->execute();
                           $table3 = $stmt3->fetchAll();
                           foreach ($table3 as $row3) {
-                            if (count($table3) < 2) {
+                            if (count($table3) == 1) {
                               echo '<div class="col-md-5"></div>
                                 <div class="col-md-2">
                                 <h4>'.$row3['nombre'].'</h4>
@@ -91,27 +91,38 @@
                                   }
                               echo '</ul>
                               </div>';
-                            } else if(count($table3) < 3){
+                            } else if(count($table3) == 2){
                               //en caso de tener 2 categorias (fem-masc)
                               echo '<div class="col-md-2"></div>
                                 <div class="col-md-3">
                                   <h4>'.$row3['nombre'].'</h4>
                                   <ul class="list-inline">';
-                                    $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                  //Se lista unicamente las categoria libre de basquet futbol y volei
+                                    $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." AND combinacion.id_edad = 7 GROUP BY categoria.nombre ORDER BY categoria.id_edad");
                                     $stmt4->execute();
                                     $table4 = $stmt4->fetchAll();
                                     foreach ($table4 as $row4) {
-                                      //en caso de tener dos categorias (hombre - mujer) futbol,volei,basquet
-                                      if ($row4['id_edad'] == 7 && $row['id_deporte'] == 2 && $row3['id_sexo'] == 2) {
+                                    //en caso de tener dos categorias (hombre - mujer) futbol,volei,basquet
+                                      if ($row3['id_sexo'] == 2 || $row['id_deporte'] != 2) {
                                         ?>
                                         <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
-                                          <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> LibreA </button></a></li>
+                                          <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br>
                                         <?php
-                                      } else {
-                                        ?> <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
-                                          <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br> <?php
                                       }
                                     }
+                                    //Se lista unicamente las categoria libre de basquet futbol y volei
+                                      $stmt4 = $dbh->prepare("SELECT categoria.nombre, categoria.id_edad FROM categoria INNER JOIN combinacion ON combinacion.id_edad = categoria.id_edad WHERE combinacion.id_deporte = ".$row['id_deporte']." AND combinacion.id_edad != 7 GROUP BY categoria.nombre ORDER BY categoria.id_edad");
+                                      $stmt4->execute();
+                                      $table4 = $stmt4->fetchAll();
+                                      foreach ($table4 as $row4) {
+                                      //en caso de tener dos categorias (hombre - mujer) futbol,volei,basquet
+                                        if ($row3['id_sexo'] == 1) {
+                                          ?>
+                                          <li><a href="../olimpiadas/inscripcion.php?deporte=<?php echo $row['id_deporte'] ?>&sexo=<?php echo $row3['id_sexo'] ?>&especialidad=<?php echo $row2['id_especialidad'] ?>&categoria=<?php echo $row4['id_edad'] ?>&jugadores=<?php echo $row['jugadores'] ?>">
+                                            <button class="btn btn-danger btn-block" type="button"><i class="fa fa-pencil"></i> <?php echo $row4['nombre'] ?> </button></a></li><br>
+                                          <?php
+                                        }
+                                      }
                                   echo '</ul>
                                 </div>';
                             } else {
@@ -168,6 +179,7 @@
                       <div class="col-md-6 offset-md-3">
                         <a href="../olimpiadas/listado.php?id_deporte=<?php echo $row['id_deporte'] ?>">
                           <button class="btn btn-warning btn-block" type="button"><i class="fa fa-pencil"></i> Ver participantes hasta el momento </button></a>
+                          <br>
                       </div>
                     </div>
                   </div>

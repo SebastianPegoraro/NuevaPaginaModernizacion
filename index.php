@@ -26,6 +26,7 @@
     <link href="css/test.css" rel="stylesheet" type="text/css">
     <!-- Para el Carousel -->
     <link href="css/carousel.css" rel="stylesheet" type="text/css">
+    <!-- Para el Video -->
     <link href="css/video.css" rel="stylesheet" type="text/css">
 
   </head>
@@ -809,7 +810,9 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/agency.js"></script>
+    <!-- Para el Carousel -->
     <script src="js/carousel.js"></script>
+    <!-- Para el Video -->
     <script src="js/video.js"></script>
 
   </body>
