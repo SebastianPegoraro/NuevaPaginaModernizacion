@@ -18,7 +18,7 @@
                             FROM persona
                             INNER JOIN inscripcion ON persona.id_persona = inscripcion.id_persona
                             INNER JOIN combinacion ON inscripcion.id_combinacion = combinacion.id_combinacion
-                            WHERE combinacion.id_deporte = ".$deporte." AND persona.denominacionjur = ".$jurisdiccion."
+                            WHERE combinacion.id_deporte = ".$deporte." AND persona.denominacionjur = ".$jurisdiccion." AND persona.numequipo IS NOT NULL
                             GROUP BY numequipo");
     $stmt->execute();
     $numequipo = $stmt->rowCount() + 1;
